@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChanceIT | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+     <h1>ChanceIT</h1>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+</nav>
+
+<section id="home">
+  <h2>Chance Crump</h2>
+  <p>Im a self-taught software developer with hands-on IT experience, 
+    including tech support, system setup, and building desktop computers from 
+    individual components. Im currently expanding my development skills through 
+    independent online education and beginner projects. Im highly motivated, 
+    detail-oriented, and eager to help clients with reliable, entry-level 
+    development and tech tasks while continuing to grow professionally.</p>
+  <button onclick="scrollToContact()">Contact Me</button>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <ul>
+    <li>HTML & CSS</li>
+    <li>Basic JavaScript</li>
+    <li>IT Support & Troubleshooting</li>
+    <li>PC Assembly & OS Installation</li>
+    <li>Customer Technical Support</li>
+  </ul>
+</section>
+
+<section id="services">
+  <h2>Services</h2>
+
+  <div class="service">
+    <h3>IT Support</h3>
+    <p>Basic troubleshooting, system setup, and technical assistance.</p>
+  </div>
+
+  <div class="service">
+    <h3>PC Setup & OS Installation</h3>
+    <p>Assembling PCs and installing Windows or Linux operating systems.</p>
+  </div>
+
+  <div class="service">
+    <h3>Website Setup</h3>
+    <p>Building simple, responsive websites using HTML and CSS.</p>
+  </div>
+
+</section>
+
+<section id="contact">
+  <h2>Contact Me</h2>
+
+  <form action="https://formspree.io/f/xnjjjkbl" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required>
+
+    <input type="email" name="email" placeholder="Your Email" required>
+
+    <textarea name="message" placeholder="Your Message" required></textarea>
+
+    <button type="submit">Send</button>
+
+    <input type="hidden" name="_subject" value="New Portfolio Contact">
+    <input type="hidden" name="_captcha" value="false">
+
+    <input type="hidden" name="_redirect" value="https://yourusername.github.io/personal-portfolio/thank-you.html">
+
+
+  </form>
+
+</section>
+
+
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>
