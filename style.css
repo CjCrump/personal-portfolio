@@ -1,23 +1,134 @@
 /* basic global styles*/
+* {
+  box-sizing: border-box;
+}
 
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
-  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
   line-height: 1.6;
+  background: #ffffff;
+  color: #222222;
 }
 
 section {
-  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 20px;
 }
+
+/* button styles */
+
+button {
+  padding: 10px 24px;
+  font-size: 1rem;
+  border: 1px solid #222;
+  background: transparent;
+  cursor: pointer;
+  max-width: 150px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+
+button:hover {
+  background: #222;
+  color: white;
+}
+
 
 /* home section */
 
+#home {
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+}
+
+#home h2 {
+  font-size: 2.2rem;
+  margin: 0;
+}
+
+#home p {
+  font-size: 1.1rem;
+  max-width: 600px;
+}
+
+
 /* skills section */
+
+#skills {
+  background: black;
+  color: white;
+}
+#skills ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 0;
+  margin: 20px 0 0;
+  list-style: none;
+}
+
+#skills li {
+  padding: 10px 14px;
+  border: 1px solid #ddd;
+  font-size: 0.95rem;
+  background: white;
+  color: black;
+}
 
 /* services section */
 
+#services {
+  gap: 20px;
+  background: black;
+  color: white;
+
+}
+
+.service {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  background: white;
+  color: black;
+}
+
+.service h3 {
+  margin: 0;
+}
+
 /* contact section */
+
+#contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 100%;
+}
+
+input,
+textarea {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+}
+
+textarea {
+  min-height: 120px;
+}
 
 #form-status {
   margin-top: 15px;
@@ -38,37 +149,38 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #222;
+  padding: 16px 24px;
+  border-bottom: 1px solid #ddd;
+  background: black;
   color: white;
-  padding: 15px;
+}
+
+nav h1 {
+  font-size: 1.2rem;
+  margin: 0;
 }
 
 nav ul {
   display: flex;
+  gap: 20px;
   list-style: none;
-}
-
-nav ul li {
-  margin-left: 20px;
+  padding: 0;
+  margin: 0;
 }
 
 nav a {
-  color: white;
   text-decoration: none;
-}
-
-/* button styling */
-
-button {
-  padding: 10px 20px;
-  border: none;
-  background: #007BFF;
   color: white;
+  padding: 10px 24px;
+  font-size: 1rem;
+  border: 1px solid #222;
+  background: black;
   cursor: pointer;
 }
 
-button:hover {
-  background: #0056b3;
+nav a:hover {
+  background: white;
+  color: black;
 }
 
 /* honey pot */
@@ -84,28 +196,28 @@ button:hover {
 .error {
   color: red;
   font-size: 0.85rem;
-  display: block;
-  margin-bottom: 10px;
 }
 
-input.error-border,
-textarea.error-border {
-  border: 2px solid red;
+.error-border {
+  border-color: red;
+}
+
+#form-status {
+  margin-top: 10px;
+  font-weight: bold;
 }
 
 /* mobile friendly layout */
 
-@media (max-width: 768px) {
+@media (max-width: 700px) {
   nav {
     flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
   }
 
   nav ul {
     flex-direction: column;
-    padding: 0;
-  }
-
-  nav ul li {
-    margin: 10px 0;
+    gap: 10px;
   }
 }
