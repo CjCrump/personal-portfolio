@@ -13,13 +13,24 @@ section {
 
 /* home section */
 
-
 /* skills section */
-
 
 /* services section */
 
+/* contact section */
 
+#form-status {
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+#form-status.success {
+  color: green;
+}
+
+#form-status.error {
+  color: red;
+}
 
 /* navigation styling*/
 
@@ -58,6 +69,28 @@ button {
 
 button:hover {
   background: #0056b3;
+}
+
+/* honey pot */
+
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+}
+
+/* error styling */
+
+.error {
+  color: red;
+  font-size: 0.85rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+input.error-border,
+textarea.error-border {
+  border: 2px solid red;
 }
 
 /* mobile friendly layout */

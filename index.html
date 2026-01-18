@@ -61,22 +61,27 @@
 <section id="contact">
   <h2>Contact Me</h2>
 
-  <form action="https://formspree.io/f/xnjjjkbl" method="POST">
-    <input type="text" name="name" placeholder="Your Name" required>
+<form id="contact-form" action="https://formspree.io/f/xnjjjkbl" method="POST" novalidate>
 
-    <input type="email" name="email" placeholder="Your Email" required>
+  <div class="honeypot">
+    <label>
+      Leave this field empty
+      <input type="text" name="company" tabindex="-1" autocomplete="off">
+    </label>
+  </div>
 
-    <textarea name="message" placeholder="Your Message" required></textarea>
+  <input type="hidden" name="_honeypot" value="company">
+  <input type="text" id="name" name="name" placeholder="Your Name">
+  <small class="error"></small>
+  <input type="email" id="email" name="email" placeholder="Your Email">
+  <small class="error"></small>
+  <textarea id="message" name="message" placeholder="Your Message"></textarea>
+  <small class="error"></small>
+  <button type="submit">Send</button>
+  <p id="form-status"></p>
+  
+</form>
 
-    <button type="submit">Send</button>
-
-    <input type="hidden" name="_subject" value="New Portfolio Contact">
-    <input type="hidden" name="_captcha" value="false">
-
-    <input type="hidden" name="_redirect" value="https://yourusername.github.io/personal-portfolio/thank-you.html">
-
-
-  </form>
 
 </section>
 
