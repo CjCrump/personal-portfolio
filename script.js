@@ -70,6 +70,11 @@ form.addEventListener("submit", function (e) {
     });
 });
 
+function scrollToContact() {
+  document.getElementById("contact").scrollIntoView({
+    behavior: "smooth"
+  });
+}
 
 function showError(input, message) {
   const error = input.nextElementSibling;
