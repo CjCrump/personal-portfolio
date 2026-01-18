@@ -7,14 +7,6 @@ const messageInput = document.getElementById("message");
 
 const honeypot = form.querySelector('input[name="company"]');
 
-if (honeypot.value !== "") {
-  // Bot detected – silently fail
-  status.textContent = "❌ Submission blocked.";
-  status.classList.add("error");
-  return;
-}
-
-
 form.addEventListener("submit", function (e) {
   e.preventDefault(); // Stop normal form submit
 
@@ -22,6 +14,15 @@ form.addEventListener("submit", function (e) {
   clearErrors();
   status.textContent = "";
   status.className = "";
+
+  // honeypot
+
+  if (honeypot.value !== "") {
+  // Bot detected – silently fail
+  status.textContent = "❌ Submission blocked.";
+  status.classList.add("error");
+  return;
+}
 
   if (nameInput.value.trim() === "") {
     showError(nameInput, "Name is required");
