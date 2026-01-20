@@ -41,7 +41,9 @@ button:hover {
 }
 
 
-/* home section */
+/* ============
+home section 
+=============*/
 
 #home {
   align-items: center;
@@ -60,7 +62,9 @@ button:hover {
 }
 
 
-/* skills section */
+/* ==============
+skills section
+============== */
 
 #skills {
   display: flex;
@@ -89,12 +93,14 @@ button:hover {
   color: black;
 }
 
-/* services section */
+/* ===============
+services section 
+================*/
 
 #services {
   gap: 20px;
-  background: black;
-  color: white;
+  background: white;
+  color: black;
   margin: 0;
 }
 
@@ -104,8 +110,8 @@ button:hover {
   gap: 10px;
   padding: 20px;
   border: 1px solid #ddd;
-  background: white;
-  color: black;
+  background: black;
+  color: white;
 }
 
 #services h2{
@@ -116,6 +122,81 @@ button:hover {
 
 .service h3 {
   margin: 0;
+}
+
+/* ==============
+projects section
+================ */
+
+#projects {
+  gap: 40px;
+  background: black;
+}
+
+#projects h2 {
+  color: white;
+  text-align: center;
+}
+
+/* Project Card Layout */
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  background: white;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Project Text */
+
+.project-card h3 {
+  margin: 0;
+}
+
+
+.project-description {
+  color: black;
+}
+
+/* Tech Stack */
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.project-tech li {
+  background: black;
+  color: white;
+  padding: 6px 10px;
+  border: 1px solid #222;
+}
+
+/* Project Links */
+
+.project-links {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.project-links a {
+  text-decoration: none;
+  padding: 8px 16px;
+  border: 1px solid #222;
+  color: black;
+}
+
+.project-links a:hover {
+  background: black;
+  color: white;
 }
 
 /* contact section */
@@ -157,7 +238,7 @@ textarea {
   color: red;
 }
 
-/* navigation styling*/
+/* navigation styling */
 
 nav {
   display: flex;
