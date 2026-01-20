@@ -27,12 +27,14 @@ button {
   padding: 10px 24px;
   font-size: 1rem;
   border: 1px solid #222;
-  background: transparent;
+  background: white;
+  color: black;
   cursor: pointer;
   max-width: 150px;
   display: flex;
   justify-content: center;
   align-self: center;
+  text-decoration: none;
 }
 
 button:hover {
