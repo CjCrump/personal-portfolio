@@ -45,6 +45,8 @@ form.addEventListener("submit", function (e) {
   if (!isValid) return;
 
   const formData = new FormData(form);
+const submitBtn = form.querySelector("button");
+submitBtn.disabled = true
 
   fetch("/", {
   method: "POST",
@@ -58,6 +60,9 @@ form.addEventListener("submit", function (e) {
   .catch(() => {
     status.textContent = "❌ Something went wrong. Please try again.";
     status.classList.add("error");
+  })
+  .finally(() => {
+    submitBtn.disabled = false;
   });
 
 });
@@ -104,21 +109,4 @@ if (scrollButton) {
   });
 }
 
-//==============//
-//disable button during submit
-//==============//
-
-const submitBtn = form.querySelector("button");
-
-submitBtn.disabled = true;
-
-fetch("/")
-  .then(() => {
-    status.textContent = "✅ Thanks! Your message has been sent.";
-    status.classList.add("success");
-    form.reset();
-  })
-  .finally(() => {
-    submitBtn.disabled = false;
-  });
 
