@@ -213,7 +213,8 @@ form {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  min-width: 100%;
+  width: 100%;
+  max-width: 500px;
 }
 
 input,
@@ -226,6 +227,13 @@ textarea {
 textarea {
   min-height: 120px;
 }
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
 
 #form-status {
   margin-top: 15px;
@@ -273,7 +281,7 @@ nav a {
   color: white;
   padding: 10px 24px;
   font-size: 1rem;
-  border: 1px solid #222;
+  border: none;
   background: black;
   cursor: pointer;
 }

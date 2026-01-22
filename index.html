@@ -13,8 +13,8 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
 </nav>
 
@@ -26,7 +26,7 @@
     independent online education and beginner projects. I'm highly motivated, 
     detail-oriented, and eager to help clients with reliable, entry-level 
     development and tech tasks while continuing to grow professionally.</p>
-  <button onclick="scrollToContact()">Contact Me</button>
+  <button class="scroll-contact">Contact Me</button>
 </section>
 
 <section id="skills">
@@ -64,82 +64,92 @@
   <h2>Projects</h2>
 
   <article class="project-card">
-  <h3>Business Landing Page Template</h3>
+    <h3>Business Landing Page Template</h3>
 
-  <p class="project-description">
-    A reusable landing page template built for personal marketing and service promotion,
-   designed to funnel visitors to a centralized portfolio contact form. Used to rapidly 
-   create campaign-specific pages for different services and offers.
-  </p>
+    <p class="project-description">
+      A reusable landing page template built for personal marketing and service promotion,
+     designed to funnel visitors to a centralized portfolio contact form. Used to rapidly 
+     create campaign-specific pages for different services and offers.
+    </p>
 
-  <ul class="project-tech">
-    <li>HTML5</li>
-    <li>CSS3</li>
-    <li>Flexbox</li>
-    <li>Responsive Design</li>
-    <li>JavaScript</li>
-  </ul>
+    <ul class="project-tech">
+      <li>HTML5</li>
+     <li>CSS3</li>
+      <li>Flexbox</li>
+      <li>Responsive Design</li>
+      <li>JavaScript</li>
+    </ul>
 
-  <div class="project-links">
-    <a href="https://CjCrump.github.io/landing-temp" target="_blank">Live Demo</a>
-    <a href="https://github.com/CjCrump/landing-temp" target="_blank">Source Code</a>
-  </div>
-</article>
- <article class="project-card">
-  <h3>Dice roller Tabletop Application</h3>
+    <div class="project-links">
+      <a href="https://CjCrump.github.io/landing-temp" target="_blank">Live Demo</a>
+      <a href="https://github.com/CjCrump/landing-temp" target="_blank">Source Code</a>
+    </div>
+  </article>
+  <article class="project-card">
+    <h3>Dice roller Tabletop Application</h3>
 
-  <p class="project-description">
-    An interactive dice rolling application built with JavaScript that simulates rolling
-    one or more dice and displays randomized results in real time. The project focuses on
-    DOM manipulation, event handling, and basic game logic while providing immediate 
-    visual feedback to the user.
-  </p>
+    <p class="project-description">
+      An interactive dice rolling application built with JavaScript that simulates rolling
+      one or more dice and displays randomized results in real time. The project focuses on
+      DOM manipulation, event handling, and basic game logic while providing immediate 
+      visual feedback to the user.
+    </p>
 
-  <ul class="project-tech">
-    <li>HTML5</li>
-    <li>CSS3</li>
-    <li>JavaScript (DOM manipulation, event listeners, random number generation)</li>
-  </ul>
+    <ul class="project-tech">
+      <li>HTML5</li>
+      <li>CSS3</li>
+      <li>JavaScript (DOM manipulation, event listeners, random number generation)</li>
+    </ul>
 
-  <div class="project-links">
-    <a href="https://CjCrump.github.io/dice-roller" target="_blank">Live Demo</a>
-    <a href="https://github.com/CjCrump/dice-roller" target="_blank">Source Code</a>
-  </div>
-</article>
+    <div class="project-links">
+      <a href="https://CjCrump.github.io/dice-roller" target="_blank">Live Demo</a>
+      <a href="https://github.com/CjCrump/dice-roller" target="_blank">Source Code</a>
+    </div>
+  </article>
 
-  
 </section>
 
 <section id="contact">
   <h2>Contact Me</h2>
 
-<form id="contact-form" action="https://formspree.io/f/xnjjjkbl" method="POST" novalidate>
+  <form
+    name="contact"
+    method="POST"
+    action="/"
+    data-netlify="true"
+    netlify-honeypot="bot-field"
+    id="contact-form"
+  >
+    <!-- Required hidden input -->
+    <input type="hidden" name="form-name" value="contact">
 
-  <div class="honeypot">
+    <!-- Honeypot -->
+    <input type="hidden" name="bot-field">
+
     <label>
-      Leave this field empty
-      <input type="text" name="company" tabindex="-1" autocomplete="off">
+      Name
+      <input type="text" id="name" name="name" required aria-label="Name">
+      <span class="error"></span>
     </label>
-  </div>
 
-  <input type="hidden" name="_honeypot" value="company">
-  <input type="text" id="name" name="name" placeholder="Your Name">
-  <small class="error"></small>
-  <input type="email" id="email" name="email" placeholder="Your Email">
-  <small class="error"></small>
-  <textarea id="message" name="message" placeholder="Your Message"></textarea>
-  <small class="error"></small>
-  <button type="submit">Send</button>
-  <p id="form-status"></p>
+    <label>
+      Email
+      <input type="email" id="email" name="email" required>
+      <span class="error"></span>
+    </label>
 
-</form>
+    <label>
+      Message
+      <textarea id="message" name="message" required></textarea>
+      <span class="error"></span>
+    </label>
 
+    <button type="submit">Send Message</button>
 
+    <!-- Status message -->
+    <p id="form-status"></p>
+  </form>
 </section>
-
-
-
-
 
   <script src="script.js"></script>
 </body>

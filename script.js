@@ -5,7 +5,7 @@ const nameInput = document.getElementById("name");
 const emailInput = document.getElementById("email");
 const messageInput = document.getElementById("message");
 
-const honeypot = form.querySelector('input[name="company"]');
+const honeypot = form.querySelector('input[name="bot-field"]');
 
 form.addEventListener("submit", function (e) {
   e.preventDefault(); // Stop normal form submit
@@ -46,35 +46,21 @@ form.addEventListener("submit", function (e) {
 
   const formData = new FormData(form);
 
-  fetch(form.action, {
-    method: "POST",
-    body: formData,
-    headers: {
-      "Accept": "application/json"
-    }
+  fetch("/", {
+  method: "POST",
+  body: formData
+})
+  .then(() => {
+    status.textContent = "✅ Thanks! Your message has been sent.";
+    status.classList.add("success");
+    form.reset();
   })
-    .then(response => {
-      if (response.ok) {
-        status.textContent = "✅ Message sent successfully!";
-        status.classList.add("success");
-        form.reset();
-      } else {
-        return response.json().then(data => {
-          throw new Error(data.error || "Something went wrong");
-        });
-      }
-    })
-    .catch(() => {
-      status.textContent = "❌ Oops! There was a problem sending your message.";
-      status.classList.add("error");
-    });
-});
-
-function scrollToContact() {
-  document.getElementById("contact").scrollIntoView({
-    behavior: "smooth"
+  .catch(() => {
+    status.textContent = "❌ Something went wrong. Please try again.";
+    status.classList.add("error");
   });
-}
+
+});
 
 function showError(input, message) {
   const error = input.nextElementSibling;
@@ -99,3 +85,40 @@ function isValidEmail(email) {
     input.nextElementSibling.textContent = "";
   });
 });
+
+// ======================
+// Smooth scroll to contact section
+// ======================
+
+const scrollButton = document.querySelector(".scroll-contact");
+
+if (scrollButton) {
+  scrollButton.addEventListener("click", () => {
+    const contactSection = document.getElementById("contact");
+
+    if (contactSection) {
+      contactSection.scrollIntoView({
+        behavior: "smooth"
+      });
+    }
+  });
+}
+
+//==============//
+//disable button during submit
+//==============//
+
+const submitBtn = form.querySelector("button");
+
+submitBtn.disabled = true;
+
+fetch("/")
+  .then(() => {
+    status.textContent = "✅ Thanks! Your message has been sent.";
+    status.classList.add("success");
+    form.reset();
+  })
+  .finally(() => {
+    submitBtn.disabled = false;
+  });
+
