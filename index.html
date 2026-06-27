@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Chance IT Studio — Custom Web Apps & Workflow Automation | Illinois</title>
 <meta name="description" content="Chance IT Studio builds custom web apps, SaaS platforms, dispatch systems, and workflow automation for small businesses. Solo developer based in Illinois. No templates — real software built around how you work.">
-<meta name="keywords" content="custom web development, workflow automation, SaaS development, web apps Illinois, small business software, custom software developer, dispatch system, construction software">
+<meta name="keywords" content="custom web development, workflow automation, SaaS development, web apps Illinois, small business software, custom software developer, dispatch system">
 <meta name="author" content="Chance Crump">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://chanceitstudio.com/">
@@ -15,804 +15,222 @@
 <meta property="og:url" content="https://chanceitstudio.com/">
 <meta property="og:title" content="Chance IT Studio — Custom Web Apps & Workflow Automation">
 <meta property="og:description" content="I build custom web apps, SaaS platforms, and workflow automation for small businesses. Real software built around how you work — not a template that almost fits.">
-<meta property="og:image" content="https://chanceitstudio.com/CIT-black-bg.png">
+<meta property="og:image" content="https://chanceitstudio.com/img/og-banner.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Chance IT Studio — C[IT]">
 <meta property="og:site_name" content="Chance IT Studio">
 <meta property="og:locale" content="en_US">
 
-<!-- Twitter Card -->
+<!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:url" content="https://chanceitstudio.com/">
 <meta name="twitter:title" content="Chance IT Studio — Custom Web Apps & Workflow Automation">
-<meta name="twitter:description" content="I build custom web apps, SaaS platforms, and workflow automation for small businesses. Real software built around how you work.">
-<meta name="twitter:image" content="https://chanceitstudio.com/CIT-black-bg.png">
+<meta name="twitter:description" content="Custom web apps, SaaS platforms, and workflow automation for small businesses. Real software built around how you work.">
+<meta name="twitter:image" content="https://chanceitstudio.com/img/og-banner.png">
+<meta name="twitter:image:alt" content="Chance IT Studio — C[IT]">
 
-<!-- Schema.org structured data -->
+<!-- Schema.org -->
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Chance IT Studio",
-  "url": "https://chanceitstudio.com",
-  "logo": "https://chanceitstudio.com/CIT-black-bg.png",
-  "image": "https://chanceitstudio.com/CIT-black-bg.png",
-  "description": "Custom web apps, SaaS platforms, dispatch systems, and workflow automation for small businesses. Based in Illinois.",
-  "founder": {
-    "@type": "Person",
-    "name": "Chance Crump",
-    "jobTitle": "Web Developer & Software Engineer"
-  },
-  "address": {
-    "@type": "PostalAddress",
-    "addressRegion": "IL",
-    "addressCountry": "US"
-  },
-  "areaServed": "US",
-  "serviceType": [
-    "Custom Web Application Development",
-    "Workflow Automation",
-    "SaaS Development",
-    "Business Websites",
-    "Site Maintenance and Hosting",
-    "Custom System Builds"
-  ],
-  "sameAs": [
-    "https://github.com/CjCrump",
-    "https://www.facebook.com/ChanceITstudio/"
-  ]
+  "@context":"https://schema.org",
+  "@type":"ProfessionalService",
+  "name":"Chance IT Studio",
+  "url":"https://chanceitstudio.com",
+  "logo":"https://chanceitstudio.com/img/CIT-black-bg.png",
+  "image":"https://chanceitstudio.com/img/og-banner.png",
+  "description":"Custom web apps, SaaS platforms, dispatch systems, and workflow automation for small businesses. Based in Illinois.",
+  "founder":{"@type":"Person","name":"Chance Crump","jobTitle":"Web Developer & Software Engineer"},
+  "address":{"@type":"PostalAddress","addressRegion":"IL","addressCountry":"US"},
+  "areaServed":"US",
+  "serviceType":["Custom Web Application Development","Workflow Automation","SaaS Development","Business Websites","Site Maintenance and Hosting","Custom System Builds"],
+  "sameAs":["https://github.com/CjCrump","https://www.facebook.com/ChanceITstudio/"]
 }
 </script>
-<link rel="icon" type="image/png" href="favicon.png">
-<link rel="apple-touch-icon" href="favicon.png">
+
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="512x512" href="img/favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="icon" type="image/svg+xml" href="cit-fav.svg" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Bebas+Neue&family=Syne:wght@400;500;700;800&display=swap" rel="stylesheet">
-<style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-:root {
-  /* dark mode (default) */
-  --bg:      #08080a;
-  --surface: #101014;
-  --s2:      #17171e;
-  --border:  #1e1e28;
-  --b2:      #2a2a38;
-  --green:   #00cc7a;
-  --orange:  #ff6b35;
-  --lime:    #8db800;
-  --muted:   #48485f;
-  --muted2:  #6a6a84;
-  --text:    #c4c4d8;
-  --white:   #eeeeff;
-  --nav-scrolled-bg: rgba(8,8,10,.96);
-  --cursor-color: #ffffff;
-  --logo-src: url("CIT-black-bg.png");
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --bg:      #f4f4f0;
-    --surface: #e8e8e3;
-    --s2:      #e0e0db;
-    --border:  #d0d0ca;
-    --b2:      #b8b8b0;
-    --green:   #00995c;
-    --orange:  #d94f1e;
-    --lime:    #6b8a00;
-    --muted:   #888880;
-    --muted2:  #666660;
-    --text:    #2a2a28;
-    --white:   #111110;
-    --nav-scrolled-bg: rgba(244,244,240,.96);
-    --cursor-color: #111110;
-    --logo-src: url("CIT-white-bg.png");
-  }
-}
-
-html { scroll-behavior: smooth; }
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: 'Syne', sans-serif;
-  overflow-x: hidden;
-}
-
-body::before {
-  content:''; position:fixed; inset:0; pointer-events:none; z-index:999; opacity:.28;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)' opacity='.05'/%3E%3C/svg%3E");
-}
-
-/* ── NAV ── */
-nav {
-  position:fixed; top:0; left:0; right:0; z-index:200;
-  padding:1.1rem 2.5rem;
-  display:flex; justify-content:space-between; align-items:center;
-  border-bottom:1px solid transparent;
-  transition:border-color .3s,background .3s;
-}
-nav.scrolled { border-color:var(--border); background:var(--nav-scrolled-bg); backdrop-filter:blur(18px); }
-
-.nav-logo { display:flex; align-items:center; gap:.5rem; text-decoration:none; }
-.logo-img  { height:44px; width:auto; flex-shrink:0; }
-.logo-sub  { font-family:'DM Mono',monospace; font-size:.57rem; color:var(--muted2); letter-spacing:.16em; text-transform:uppercase; }
-
-.nav-links { display:flex; gap:2rem; list-style:none; }
-.nav-links a {
-  font-family:'DM Mono',monospace; font-size:.7rem;
-  color:var(--muted); text-decoration:none;
-  letter-spacing:.12em; text-transform:uppercase; transition:color .2s;
-}
-.nav-links a:hover { color:var(--green); }
-
-/* ── HERO ── */
-.hero {
-  min-height:100vh;
-  display:grid; grid-template-columns:1fr 420px;
-  align-items:center; gap:3rem;
-  padding:9rem 2.5rem 5rem;
-  position:relative; overflow:hidden;
-}
-.hero-grid {
-  position:absolute; inset:0; pointer-events:none;
-  background-image:
-    linear-gradient(rgba(0,255,157,.022) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(0,255,157,.022) 1px,transparent 1px);
-  background-size:68px 68px;
-}
-.hero-glow {
-  position:absolute; top:-15%; right:-5%; width:680px; height:680px; pointer-events:none;
-  background:radial-gradient(circle,rgba(0,180,100,.06) 0%,transparent 65%);
-}
-.hero-wm {
-  position:absolute; right:-3%; top:50%; transform:translateY(-50%);
-  font-family:'Bebas Neue',sans-serif;
-  font-size:clamp(16rem,26vw,36rem);
-  line-height:1; color:transparent;
-  -webkit-text-stroke:1px rgba(0,255,157,.032);
-  pointer-events:none; user-select:none; white-space:nowrap;
-}
-
-.hero-left { display:flex; flex-direction:column; gap:1.4rem; position:relative; }
-.hero-eyebrow {
-  font-family:'DM Mono',monospace; font-size:.68rem;
-  color:var(--green); letter-spacing:.22em; text-transform:uppercase;
-  display:flex; align-items:center; gap:.85rem;
-  opacity:0; animation:up .5s ease .1s forwards;
-}
-.hero-eyebrow::before { content:''; width:1.75rem; height:1px; background:var(--green); flex-shrink:0; }
-
-.hero-name {
-  font-family:'Bebas Neue',sans-serif;
-  font-size:clamp(4.2rem,9.5vw,9.5rem);
-  line-height:.9; letter-spacing:.015em; color:var(--white);
-  opacity:0; animation:up .6s ease .2s forwards;
-}
-.hero-name .g { color:var(--green); }
-
-.hero-role {
-  font-family:'DM Mono',monospace; font-size:.78rem;
-  color:var(--muted2); letter-spacing:.1em;
-  opacity:0; animation:up .6s ease .3s forwards;
-}
-
-.hero-bio {
-  font-size:1rem; line-height:1.82; color:var(--text); max-width:500px;
-  opacity:0; animation:up .6s ease .4s forwards;
-}
-
-.hero-cta {
-  display:flex; gap:1.1rem; align-items:center; flex-wrap:wrap;
-  opacity:0; animation:up .6s ease .5s forwards;
-}
-.btn {
-  font-family:'DM Mono',monospace; font-size:.74rem; font-weight:500;
-  letter-spacing:.1em; text-transform:uppercase;
-  text-decoration:none; display:inline-block;
-  transition:opacity .2s,transform .18s;
-}
-.btn-green {
-  padding:.82rem 1.9rem; background:var(--green); color:#000;
-  clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px));
-}
-.btn-green:hover { opacity:.82; transform:translateY(-2px); }
-.btn-outline { padding:.8rem 1.7rem; border:1px solid var(--b2); color:var(--muted2); }
-.btn-outline:hover { border-color:var(--white); color:var(--white); }
-
-.hero-right { opacity:0; animation:fadeIn .8s ease .9s forwards; }
-.terminal { background:var(--surface); border:1px solid var(--b2); border-radius:8px; overflow:hidden; }
-.t-bar { display:flex; align-items:center; gap:.45rem; padding:.6rem 1rem; background:var(--border); }
-.dot { width:9px; height:9px; border-radius:50%; }
-.dot.r{background:#ff5f57;} .dot.y{background:#febc2e;} .dot.g2{background:#28c840;}
-.t-label { font-family:'DM Mono',monospace; font-size:.58rem; color:var(--muted); margin-left:auto; letter-spacing:.06em; }
-.t-body { padding:1.3rem 1.4rem; font-family:'DM Mono',monospace; font-size:.7rem; line-height:2.1; }
-.tp{color:var(--green);} .tc{color:var(--white);} .to{color:#54546e;} .tok{color:var(--lime);}
-.blink { display:inline-block; width:6px; height:.85em; background:var(--green); vertical-align:text-bottom; animation:blink 1s step-end infinite; }
-
-/* ── STRIP ── */
-.strip {
-  border-top:1px solid var(--border); border-bottom:1px solid var(--border);
-  background:var(--surface); display:flex; overflow-x:auto;
-}
-.strip-cell { flex:1; min-width:150px; padding:1.4rem 2rem; border-right:1px solid var(--border); }
-.strip-cell:last-child { border-right:none; }
-.snum { font-family:'Bebas Neue',sans-serif; font-size:2.5rem; color:var(--white); line-height:1; }
-.snum em { color:var(--green); font-style:normal; }
-.slabel { font-family:'DM Mono',monospace; font-size:.6rem; color:var(--muted); text-transform:uppercase; letter-spacing:.12em; margin-top:.3rem; }
-
-/* ── SHARED ── */
-section { padding:6rem 2.5rem; }
-.tag {
-  font-family:'DM Mono',monospace; font-size:.63rem; color:var(--green);
-  letter-spacing:.22em; text-transform:uppercase;
-  display:flex; align-items:center; gap:.85rem; margin-bottom:2.5rem;
-}
-.tag::after { content:''; flex:1; height:1px; background:var(--border); max-width:160px; }
-.sh {
-  font-family:'Bebas Neue',sans-serif;
-  font-size:clamp(2.5rem,5.5vw,4.5rem);
-  line-height:.95; letter-spacing:.01em; color:var(--white); margin-bottom:1rem;
-}
-
-/* ── ABOUT ── */
-#about { background:var(--surface); }
-.about-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:start; margin-top:3rem; }
-.about-text p { font-size:.94rem; line-height:1.88; color:var(--text); margin-bottom:1.2rem; }
-.about-text p:last-child { margin-bottom:0; }
-
-.skill-table { display:flex; flex-direction:column; gap:1.5px; background:var(--border); }
-.skill-row { background:var(--bg); padding:1rem 1.3rem; display:flex; justify-content:space-between; align-items:center; transition:background .2s; }
-.skill-row:hover { background:var(--s2); }
-.skill-name { font-size:.87rem; color:var(--white); font-weight:600; }
-.skill-chips { display:flex; gap:.35rem; flex-wrap:wrap; justify-content:flex-end; }
-.chip { font-family:'DM Mono',monospace; font-size:.57rem; color:var(--muted2); border:1px solid var(--b2); padding:.18rem .45rem; letter-spacing:.05em; }
-
-/* ── WORK ── */
-#work { background:var(--bg); }
-.work-grid {
-  display:grid; grid-template-columns:repeat(2,1fr);
-  gap:1.5px; background:var(--border); border:1px solid var(--border); margin-top:3rem;
-}
-/* clickable card base */
-.wcard {
-  background:var(--bg); padding:2.4rem;
-  display:flex; flex-direction:column; gap:.9rem;
-  position:relative; overflow:hidden;
-  text-decoration:none; color:inherit;
-}
-a.wcard { transition:background .25s; cursor:pointer; }
-a.wcard:hover { background:var(--surface); }
-a.wcard::before { content:''; position:absolute; top:0; left:0; width:3px; height:0; transition:height .35s ease; }
-a.wcard.g::before { background:var(--green); }
-a.wcard.o::before { background:var(--orange); }
-a.wcard.l::before { background:var(--lime); }
-a.wcard:hover::before { height:100%; }
-a.wcard.g:hover .wcard-arrow { color:var(--green);  transform:translate(3px,-3px); }
-a.wcard.o:hover .wcard-arrow { color:var(--orange); transform:translate(3px,-3px); }
-a.wcard.l:hover .wcard-arrow { color:var(--lime);   transform:translate(3px,-3px); }
-
-/* coming soon card — div, not interactive */
-div.wcard {
-  opacity:.42;
-  cursor:default;
-}
-div.wcard.o::before { display:none; }
-
-.soon-badge {
-  font-family:'DM Mono',monospace; font-size:.56rem; letter-spacing:.12em; text-transform:uppercase;
-  display:inline-flex; align-items:center; gap:.4rem;
-  padding:.2rem .6rem; border:1px solid var(--b2); color:var(--muted);
-  align-self:flex-start;
-}
-.soon-badge::before { content:''; width:5px; height:5px; border-radius:50%; background:var(--orange); display:inline-block; flex-shrink:0; }
-
-.wcard-tag { font-family:'DM Mono',monospace; font-size:.58rem; letter-spacing:.14em; text-transform:uppercase; display:inline-block; padding:.22rem .55rem; align-self:flex-start; }
-.wcard.g .wcard-tag { color:var(--green);  background:rgba(0,255,157,.06); }
-.wcard.o .wcard-tag { color:var(--orange); background:rgba(255,107,53,.06); }
-.wcard.l .wcard-tag { color:var(--lime);   background:rgba(200,255,0,.06); }
-
-.wcard-title { font-size:1.22rem; font-weight:700; color:var(--white); line-height:1.2; }
-.wcard-desc  { font-size:.86rem; line-height:1.78; color:var(--muted2); flex:1; }
-.wcard-foot  { display:flex; justify-content:space-between; align-items:center; margin-top:.3rem; }
-.wcard-stack { display:flex; gap:.35rem; flex-wrap:wrap; }
-.wcard-stack span { font-family:'DM Mono',monospace; font-size:.57rem; color:var(--muted); border:1px solid var(--border); padding:.15rem .4rem; }
-.wcard-arrow { font-size:1rem; color:var(--muted); transition:color .2s,transform .2s; }
-.wcard-soon-label { font-family:'DM Mono',monospace; font-size:.6rem; color:var(--muted); letter-spacing:.08em; }
-
-/* ── SERVICES ── */
-#services { background:var(--surface); }
-.svc-grid {
-  display:grid; grid-template-columns:repeat(3,1fr);
-  gap:1.5px; background:var(--border); border:1px solid var(--border); margin-top:3rem;
-}
-.svc { background:var(--surface); padding:2.1rem; position:relative; overflow:hidden; transition:background .25s; }
-.svc:hover { background:var(--s2); }
-.svc::after { content:''; position:absolute; bottom:0; left:0; right:0; height:2px; background:var(--green); transform:scaleX(0); transform-origin:left; transition:transform .35s ease; }
-.svc:hover::after { transform:scaleX(1); }
-.svc-num { font-family:'DM Mono',monospace; font-size:.6rem; color:var(--b2); letter-spacing:.1em; margin-bottom:1.2rem; transition:color .3s; }
-.svc:hover .svc-num { color:var(--green); }
-.svc-name { font-size:1rem; font-weight:700; color:var(--white); margin-bottom:.55rem; }
-.svc-desc { font-size:.84rem; line-height:1.72; color:var(--muted2); }
-
-/* ── PROCESS ── */
-#process { background:var(--bg); }
-.process-list { margin-top:3rem; }
-.pitem { display:grid; grid-template-columns:3.5rem 1fr; gap:2rem; padding:2rem 0; border-bottom:1px solid var(--border); position:relative; overflow:hidden; }
-.pitem::after { content:''; position:absolute; bottom:0; left:0; right:0; height:1px; background:var(--green); transform:scaleX(0); transform-origin:left; transition:transform .4s ease; }
-.pitem:hover::after { transform:scaleX(1); }
-.pnum { font-family:'DM Mono',monospace; font-size:.66rem; color:var(--green); padding-top:.2rem; }
-.pname { font-size:1.05rem; font-weight:700; color:var(--white); margin-bottom:.4rem; }
-.pdesc { font-size:.86rem; line-height:1.75; color:var(--muted2); }
-
-/* ── CONTACT ── */
-#contact { background:var(--surface); }
-.contact-wrap { display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:start; }
-.contact-left p { font-size:.92rem; line-height:1.85; color:var(--muted2); margin-top:1rem; margin-bottom:2rem; }
-.contact-links { display:flex; flex-direction:column; gap:.8rem; margin-top:1.5rem; }
-.clink { font-family:'DM Mono',monospace; font-size:.7rem; color:var(--muted2); text-decoration:none; letter-spacing:.08em; display:flex; align-items:center; gap:.7rem; transition:color .2s; }
-.clink::before { content:'→'; color:var(--green); }
-.clink:hover { color:var(--white); }
-
-.cform { display:flex; flex-direction:column; gap:1.2rem; }
-.field { display:flex; flex-direction:column; gap:.4rem; }
-.field label { font-family:'DM Mono',monospace; font-size:.6rem; color:var(--muted); text-transform:uppercase; letter-spacing:.12em; }
-.field input,.field textarea {
-  background:var(--bg); border:1px solid var(--b2); color:var(--white);
-  font-family:'Syne',sans-serif; font-size:.9rem; padding:.8rem 1rem;
-  outline:none; transition:border-color .2s; -webkit-appearance:none; border-radius:0;
-}
-.field input:focus,.field textarea:focus { border-color:var(--green); }
-.field textarea { min-height:130px; resize:vertical; }
-.form-row { display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; }
-.form-foot { display:flex; align-items:center; gap:1.5rem; }
-#fstatus { font-family:'DM Mono',monospace; font-size:.68rem; color:var(--green); opacity:0; transition:opacity .3s; }
-.honeypot { position:absolute; left:-9999px; }
-
-/* ── FOOTER ── */
-footer { padding:1.6rem 2.5rem; border-top:1px solid var(--border); background:var(--bg); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; }
-.footer-copy { font-family:'DM Mono',monospace; font-size:.6rem; color:var(--muted); letter-spacing:.06em; }
-.footer-links { display:flex; gap:2rem; list-style:none; }
-.footer-links a { font-family:'DM Mono',monospace; font-size:.6rem; color:var(--muted); text-decoration:none; transition:color .2s; }
-.footer-links a:hover { color:var(--green); }
-
-/* ── REVEAL ── */
-.reveal { opacity:0; transform:translateY(22px); transition:opacity .65s ease,transform .65s ease; }
-.reveal.in { opacity:1; transform:none; }
-
-@keyframes up     { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:none} }
-@keyframes fadeIn { from{opacity:0} to{opacity:1} }
-@keyframes blink  { 0%,100%{opacity:1} 50%{opacity:0} }
-
-/* ── RESPONSIVE ── */
-@media(max-width:960px) {
-  .hero { grid-template-columns:1fr; padding:7rem 1.5rem 4rem; }
-  .hero-right { display:none; }
-  .about-grid { grid-template-columns:1fr; gap:2.5rem; }
-  .work-grid  { grid-template-columns:1fr; }
-  .svc-grid   { grid-template-columns:1fr 1fr; }
-  .contact-wrap { grid-template-columns:1fr; gap:3rem; }
-  .form-row { grid-template-columns:1fr; }
-}
-@media(max-width:640px) {
-  nav { padding:1rem 1.25rem; }
-  .nav-links { display:none; }
-  section { padding:4rem 1.25rem; }
-  footer { padding:1.5rem 1.25rem; }
-  .svc-grid { grid-template-columns:1fr; }
-}
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<!-- ══ NAV ══ -->
-<nav id="nav">
-  <a href="#home" class="nav-logo">
+<div class="acc-glow"></div>
+
+<!-- ============================ HEADER ============================ -->
+<header>
+  <a href="#hero" class="logo" data-go="0" aria-label="Chance IT Studio — home">
     <picture>
-      <source srcset="CIT-white-bg.png" media="(prefers-color-scheme: light)">
-      <img src="CIT-black-bg.png" alt="Chance IT Studio" class="logo-img">
+      <source srcset="img/CIT-white-bg.png" media="(prefers-color-scheme: light)">
+      <img src="img/CIT-black-bg.png" alt="Chance IT Studio">
     </picture>
-    <svg width="7" height="10" viewBox="0 0 16 26" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;margin-left:-2px;margin-bottom:-4px;">
+    <svg class="cursor" width="7" height="10" viewBox="0 0 16 26" fill="none" xmlns="http://www.w3.org/2000/svg">
       <polygon points="0,0 0,22 5.5,16 10,26 13,24.5 8.5,14.5 16,14.5" fill="var(--white)"/>
     </svg>
-    <span class="logo-sub">Studio</span>
+    <small>Studio</small>
   </a>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#work">Work</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#process">Process</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
 
-<!-- ══ HERO ══ -->
-<section class="hero" id="home">
-  <div class="hero-grid"></div>
-  <div class="hero-glow"></div>
-  <div class="hero-wm">C[IT]</div>
+  <nav class="nav" aria-label="Section navigation">
+    <div class="nav-dots" id="navDots"></div>
+    <span class="nav-label" id="navLabel">Home</span>
+  </nav>
 
-  <div class="hero-left">
-    <div class="hero-eyebrow">Solo Developer · Illinois</div>
-    <h1 class="hero-name">CHANCE<br><span class="g">CRUMP</span></h1>
-    <p class="hero-role">Web Development · Workflow Automation · Real Results</p>
-    <p class="hero-bio">
-      Spending more time managing your process than running your business? I build the software that fixes it — turning manual text chains into automated dispatches, paper forms into digital workflows, and missed revenue into money on the books. Web apps, mobile tools, SaaS platforms, and custom automation built around how you actually work.
-    </p>
-    <div class="hero-cta">
-      <a href="#contact" class="btn btn-green">Start a Project</a>
-      <a href="#work" class="btn btn-outline">See the Work</a>
-    </div>
-  </div>
-
-  <div class="hero-right">
-    <div class="terminal">
-      <div class="t-bar">
-        <div class="dot r"></div><div class="dot y"></div><div class="dot g2"></div>
-        <span class="t-label">chanceit — zsh</span>
-      </div>
-      <div class="t-body">
-        <div><span class="tp">→</span> <span class="tc">git push origin main</span></div>
-        <div class="to">  Writing objects: 100% (5/5)</div>
-        <div><span class="tok">  ✓ Cloudflare deploy live</span></div>
-        <div class="to">  chanceitstudio.com</div>
-        <div>&nbsp;</div>
-        <div><span class="tp">→</span> <span class="tc">node scripts/migrate.js</span></div>
-        <div class="to">  Running 3 pending migrations...</div>
-        <div><span class="tok">  ✓ Stripe webhooks OK</span></div>
-        <div><span class="tok">  ✓ Auth tables OK</span></div>
-        <div><span class="tok">  ✓ Done in 2.1s</span></div>
-        <div>&nbsp;</div>
-        <div><span class="tp">→</span> <span class="tc"><span class="blink"></span></span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ STRIP ══ -->
-<div class="strip">
-  <div class="strip-cell"><div class="snum">4</div><div class="slabel">Projects Shipped</div></div>
-  <div class="strip-cell"><div class="snum">2</div><div class="slabel">SaaS Platforms</div></div>
-  <div class="strip-cell"><div class="snum">100<em>%</em></div><div class="slabel">Custom Code</div></div>
-  <div class="strip-cell"><div class="snum">0</div><div class="slabel">Page Builders</div></div>
-</div>
-
-<!-- ══ ABOUT ══ -->
-<section id="about">
-  <div class="tag">About</div>
-  <h2 class="sh reveal">Who's<br>behind it.</h2>
-  <div class="about-grid">
-    <div class="about-text reveal">
-      <p>
-        I'm Chance Crump — a journeyman laborer, lifelong tech enthusiast, and self-taught developer out of Illinois. My best friend showed me how to swap a GPU freshman year of high school, and I've been hooked ever since. Now at 34, I'm channeling that same drive into building software that helps people actually get ahead.
-      </p>
-      <p>
-        Every project has been a lesson. TTDice started as a local dice roller and grew into a full session tracker with shareable rolls and real-time party play. A concrete calculator turned into GlovesOn — a complete jobsite companion with a materials calculator, unit converter, time log, OT tracking, and notes. TCMVP started as a scheduling app and became a full transaction coordinator platform with contract parsing, automated reminders, and Stripe billing. SmokeSignal started as one scheduler's text-message problem and is now a dispatch platform capable of managing hundreds of crew assignments at once.
-      </p>
-      <p>
-        Building runs in my blood. My goal is to bring that same energy to businesses that are ready to stop doing manually what a well-built tool should handle — and bring everyone up with me.
-      </p>
-    </div>
-    <div class="skill-table reveal">
-      <div class="skill-row"><span class="skill-name">Frontend</span><div class="skill-chips"><span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">JavaScript</span><span class="chip">Mobile-first</span></div></div>
-      <div class="skill-row"><span class="skill-name">Backend</span><div class="skill-chips"><span class="chip">Node.js</span><span class="chip">PostgreSQL</span><span class="chip">REST APIs</span></div></div>
-      <div class="skill-row"><span class="skill-name">Payments</span><div class="skill-chips"><span class="chip">Stripe</span><span class="chip">Webhooks</span><span class="chip">Subscriptions</span></div></div>
-      <div class="skill-row"><span class="skill-name">Real-Time</span><div class="skill-chips"><span class="chip">WebSockets</span><span class="chip">Live Updates</span></div></div>
-      <div class="skill-row"><span class="skill-name">Deployment</span><div class="skill-chips"><span class="chip">Cloudflare</span><span class="chip">Netlify</span><span class="chip">Git</span><span class="chip">GitHub</span></div></div>
-      <div class="skill-row"><span class="skill-name">Automation</span><div class="skill-chips"><span class="chip">Workflows</span><span class="chip">Parsing</span><span class="chip">Integrations</span></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ WORK ══ -->
-<section id="work">
-  <div class="tag">Selected Work</div>
-  <h2 class="sh reveal">Built and<br>shipped.</h2>
-  <div class="work-grid">
-
-    <!-- 1. TCMVP -->
-    <a class="wcard g reveal" href="https://tcmvp.com" target="_blank" rel="noopener">
-      <span class="wcard-tag">SaaS · Real Estate</span>
-      <div class="wcard-title">TCMVP — Transaction Coordinator Platform</div>
-      <p class="wcard-desc">Real estate transaction coordinators juggle dozens of deals across spreadsheets and sticky notes. TCMVP replaces that with a proper platform: deadline tracking, document management, automated team reminders, and PDF contract parsing that pulls critical dates with a confidence score — so nothing slips through the cracks. Stripe billing, PostgreSQL backend, full auth. Priced at $14.99/mo, replacing tools that cost 4–5× more.</p>
-      <div class="wcard-foot">
-        <div class="wcard-stack"><span>Node.js</span><span>PostgreSQL</span><span>Stripe</span><span>Cloudflare</span></div>
-        <div class="wcard-arrow">↗</div>
-      </div>
+  <div class="h-right">
+    <a class="soc" href="https://github.com/CjCrump" target="_blank" rel="noopener" aria-label="GitHub">
+      <svg viewBox="0 0 24 24"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5A11.5 11.5 0 0 0 23.5 12C23.5 5.7 18.3.5 12 .5z"/></svg>
     </a>
-
-    <!-- 2. GlovesOn -->
-    <a class="wcard l reveal" href="https://gloveson.chanceitstudio.com" target="_blank" rel="noopener">
-      <span class="wcard-tag">Mobile Tool · Trades</span>
-      <div class="wcard-title">GlovesOn — Jobsite Companion</div>
-      <p class="wcard-desc">A mobile-first PWA built for crews in the field — big buttons, glove-friendly, works offline. Includes a full materials calculator (concrete, rock, sand, asphalt — slab, footing, column, and more), an engineer-to-tape-measure unit converter, a daily time log with OT rules and pay period tracking, and a freeform notes tool. No account required. All data stays on the device.</p>
-      <div class="wcard-foot">
-        <div class="wcard-stack"><span>HTML5</span><span>CSS3</span><span>Vanilla JS</span><span>PWA</span></div>
-        <div class="wcard-arrow">↗</div>
-      </div>
+    <a class="soc" href="https://www.facebook.com/ChanceITstudio/" target="_blank" rel="noopener" aria-label="Facebook">
+      <svg viewBox="0 0 24 24"><path d="M24 12a12 12 0 1 0-13.9 11.9v-8.4H7v-3.5h3.1V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9v2.2h3.4l-.5 3.5h-2.9v8.4A12 12 0 0 0 24 12z"/></svg>
     </a>
-
-    <!-- 3. TTDice -->
-    <a class="wcard g reveal" href="https://ttdice.chanceitstudio.com" target="_blank" rel="noopener">
-      <span class="wcard-tag">Web App · Tabletop</span>
-      <div class="wcard-title">TTDice — Tabletop Dice Roller</div>
-      <p class="wcard-desc">A fast, clean dice roller for tabletop RPGs built to actually get used at the table. Rolls all standard die types including d100, tracks session stats, supports saved presets for common combinations like attack rolls and spell damage, and uses the browser's CSPRNG for provably fair randomness. Natural 20s and 1s get their own callout. Optional Supabase logging for community stats.</p>
-      <div class="wcard-foot">
-        <div class="wcard-stack"><span>HTML5</span><span>CSS3</span><span>Vanilla JS</span><span>Supabase</span></div>
-        <div class="wcard-arrow">↗</div>
-      </div>
-    </a>
-
-    <!-- 4. SmokeSignal — live -->
-    <a class="wcard o reveal" href="https://smokesignaldispatch.com/landing" target="_blank" rel="noopener">
-      <span class="wcard-tag">Dispatch · Contractors</span>
-      <div class="wcard-title">SmokeSignal — Field Dispatch & Crew Coordination</div>
-      <p class="wcard-desc">Replacing group texts and phone-tag with a real dispatch system. Schedulers create jobs, assign crew by trade, and send structured notifications — job title, location link, start time, chief contact — in one tap. Built on WebSockets so the field and the office are always on the same page. Currently live with its first client, managing crews across multiple remote sites simultaneously.</p>
-      <div class="wcard-foot">
-        <div class="wcard-stack"><span>Vanilla JS</span><span>WebSockets</span><span>Supabase</span><span>Twilio</span></div>
-        <div class="wcard-arrow">↗</div>
-      </div>
-    </a>
-
+    <a class="h-cta" href="#contact" data-go="5">Start a project</a>
   </div>
-</section>
+</header>
 
-<!-- ══ SERVICES ══ -->
-<section id="services">
-  <div class="tag">Services</div>
-  <h2 class="sh reveal">What I<br>build for you.</h2>
-  <div class="svc-grid">
-    <div class="svc reveal">
-      <div class="svc-num">01</div>
-      <div class="svc-name">Custom Web Applications</div>
-      <p class="svc-desc">Auth, billing, dashboards, and real business logic. Built to match how your operation actually runs, not adapted from a template that almost fits.</p>
-    </div>
-    <div class="svc reveal">
-      <div class="svc-num">02</div>
-      <div class="svc-name">Business Sites & Landing Pages</div>
-      <p class="svc-desc">Fast, clean, hand-coded pages — not a drag-and-drop builder with a monthly fee attached. Yours to own, built to load, built to convert.</p>
-    </div>
-    <div class="svc reveal">
-      <div class="svc-num">03</div>
-      <div class="svc-name">Site Maintenance & Hosting</div>
-      <p class="svc-desc">No time to keep your site current? I'll host and maintain it for you — content updates, performance, and uptime — so your site moves as fast as your business does.</p>
-    </div>
-    <div class="svc reveal">
-      <div class="svc-num">04</div>
-      <div class="svc-name">Workflow Automation</div>
-      <p class="svc-desc">Manual processes are expensive. I'll map your current workflow — phone calls, spreadsheets, paper forms — and build the system that eliminates the bottleneck and captures revenue you're currently leaving on the table.</p>
-    </div>
-    <div class="svc reveal">
-      <div class="svc-num">05</div>
-      <div class="svc-name">Custom System Builds</div>
-      <p class="svc-desc">Windows, Linux, Raspberry Pi — desktop or server. Give me a budget and a use case, and I'll build, configure, and hand you the keys to a system that does exactly what you need.</p>
-    </div>
-    <div class="svc reveal">
-      <div class="svc-num">06</div>
-      <div class="svc-name">Performance & Code Audits</div>
-      <p class="svc-desc">Slow site? Broken workflow? I'll dig into what you have, find what's actually holding you back, and give you a plain-English diagnosis before we talk solutions. No jargon, no upsell.</p>
-    </div>
-  </div>
-</section>
+<!-- ============================ STAGE / WHEEL ============================ -->
+<main class="stage" id="stage" tabindex="0" role="application"
+      aria-label="Chance IT Studio. Spin the wheel to move between sections — swipe, drag, arrow keys, the dots up top, or the rewind and fast-forward buttons.">
 
-<!-- ══ PROCESS ══ -->
-<section id="process">
-  <div class="tag">How It Works</div>
-  <h2 class="sh reveal">No surprises.<br>Just results.</h2>
-  <div class="process-list">
-    <div class="pitem reveal">
-      <div class="pnum">01</div>
-      <div>
-        <div class="pname">Discovery Call — 30 min, no charge</div>
-        <p class="pdesc">Tell me what you're trying to fix. I'll ask the right questions, get into the actual problem (not just the symptom), and be straight with you about what makes sense to build. No pitch, no pressure, no commitment.</p>
-      </div>
-    </div>
-    <div class="pitem reveal">
-      <div class="pnum">02</div>
-      <div>
-        <div class="pname">Scoped Proposal — flat rate, no hourly surprises</div>
-        <p class="pdesc">A clear document: exactly what gets built, what it costs, and how long it takes. Everything agreed on before work starts. No scope creep, no surprise invoices.</p>
-      </div>
-    </div>
-    <div class="pitem reveal">
-      <div class="pnum">03</div>
-      <div>
-        <div class="pname">Build & Review — working software, not wireframes</div>
-        <p class="pdesc">You see real, running software at each stage — not mockups you have to imagine. Give feedback on something you can actually click and use. That's how you know it'll work when it ships.</p>
-      </div>
-    </div>
-    <div class="pitem reveal">
-      <div class="pnum">04</div>
-      <div>
-        <div class="pname">Deploy & Stick Around</div>
-        <p class="pdesc">I deploy it, walk you through it, and stay reachable. Small changes, questions, follow-on work — I don't disappear after the invoice. You're not on your own once it's live.</p>
-      </div>
-    </div>
-  </div>
-</section>
+  <div class="tiles" id="tiles">
 
-<!-- ══ CONTACT ══ -->
-<section id="contact">
-  <div class="tag">Get In Touch</div>
-  <div class="contact-wrap">
-    <div class="contact-left reveal">
-      <h2 class="sh">Let's build<br>something real.</h2>
-      <p>Got a process that needs to be faster, a tool that needs to exist, or a workflow that's costing you time and money? Fill out the form or reach out directly. I respond within one business day — usually the same day.</p>
+    <!-- 0 · HERO -->
+    <section class="tile" id="hero" aria-label="Home">
+      <span class="eyebrow">Solo developer · Illinois</span>
+      <h1 class="hero-name">CHANCE<br><span class="g">CRUMP</span></h1>
+      <p class="role">Web development · Workflow automation · Real results</p>
+      <p class="lead">I build custom software that fixes how your business actually runs — manual chains into automated dispatches, paper forms into digital workflows, missed revenue into money on the books.</p>
+      <div class="cta-row">
+        <a class="btn btn-fill" href="#contact" data-go="5">Start a project</a>
+        <a class="btn btn-line" href="#work" data-go="2">See the work</a>
+      </div>
+    </section>
+
+    <!-- 1 · ABOUT -->
+    <section class="tile" id="about" aria-label="About">
+      <span class="eyebrow">About</span>
+      <h2 class="sh">Who's behind it.</h2>
+      <p class="lead">Self-taught developer and journeyman laborer out of Illinois. I swapped my first GPU at 14 and never stopped. My value is judgment, architecture, and getting things across the finish line — with modern AI tooling as part of the workflow.</p>
+      <p class="lead">Every project taught the next: a dice roller became a session tracker, a concrete calculator a full jobsite app, a scheduler a transaction platform, a text-message problem a live dispatch system.</p>
+      <div class="chips">
+        <span>JavaScript</span><span>Node.js</span><span>PostgreSQL</span><span>Stripe</span><span>WebSockets</span><span>PWA</span><span>Cloudflare</span>
+      </div>
+    </section>
+
+    <!-- 2 · WORK -->
+    <section class="tile" id="work" aria-label="Work">
+      <span class="eyebrow">Selected work</span>
+      <h2 class="sh">Built &amp; shipped.</h2>
+      <div class="proj-grid">
+        <a class="proj" style="--pa:var(--green)" href="https://tcmvp.com" target="_blank" rel="noopener">
+          <div class="proj-top"><span class="proj-name">TCMVP</span><span class="proj-arrow">↗</span></div>
+          <p class="proj-desc">Real estate transaction-coordinator SaaS — deadline tracking, contract parsing, Stripe billing.</p>
+          <div class="proj-stack"><span>Node.js</span><span>PostgreSQL</span><span>Stripe</span></div>
+        </a>
+        <a class="proj" style="--pa:var(--orange)" href="https://smokesignaldispatch.com/landing" target="_blank" rel="noopener">
+          <div class="proj-top"><span class="proj-name">SmokeSignal</span><span class="proj-arrow">↗</span></div>
+          <p class="proj-desc">Real-time crew dispatch over WebSockets — structured assignments, no more group texts. Live with its first client.</p>
+          <div class="proj-stack"><span>WebSockets</span><span>Twilio</span></div>
+        </a>
+        <a class="proj" style="--pa:var(--lime)" href="https://gloveson.chanceitstudio.com" target="_blank" rel="noopener">
+          <div class="proj-top"><span class="proj-name">GlovesOn</span><span class="proj-arrow">↗</span></div>
+          <p class="proj-desc">Offline-first jobsite PWA — materials calc, unit converter, time log with OT. Glove-friendly, no account.</p>
+          <div class="proj-stack"><span>PWA</span><span>Vanilla JS</span></div>
+        </a>
+        <a class="proj" style="--pa:var(--cyan)" href="https://ttdice.chanceitstudio.com" target="_blank" rel="noopener">
+          <div class="proj-top"><span class="proj-name">TTDice</span><span class="proj-arrow">↗</span></div>
+          <p class="proj-desc">Fast, provably-fair tabletop dice roller — session stats, saved presets, community logging.</p>
+          <div class="proj-stack"><span>Vanilla JS</span><span>Supabase</span></div>
+        </a>
+      </div>
+    </section>
+
+    <!-- 3 · SERVICES -->
+    <section class="tile" id="services" aria-label="Services">
+      <span class="eyebrow">Services</span>
+      <h2 class="sh">What I build.</h2>
+      <div class="svc-grid">
+        <div class="svc"><span class="n">01</span><div><div class="nm">Custom web apps</div><div class="ds">Auth, billing, dashboards, real business logic.</div></div></div>
+        <div class="svc"><span class="n">02</span><div><div class="nm">Sites &amp; landing pages</div><div class="ds">Fast, hand-coded, yours to own.</div></div></div>
+        <div class="svc"><span class="n">03</span><div><div class="nm">Maintenance &amp; hosting</div><div class="ds">Content, performance, and uptime handled.</div></div></div>
+        <div class="svc"><span class="n">04</span><div><div class="nm">Workflow automation</div><div class="ds">Kill the bottleneck, capture the revenue.</div></div></div>
+        <div class="svc"><span class="n">05</span><div><div class="nm">Custom system builds</div><div class="ds">Windows, Linux, Pi — desktop or server.</div></div></div>
+        <div class="svc"><span class="n">06</span><div><div class="nm">Performance &amp; audits</div><div class="ds">Plain-English diagnosis, no upsell.</div></div></div>
+      </div>
+    </section>
+
+    <!-- 4 · PROCESS -->
+    <section class="tile" id="process" aria-label="Process">
+      <span class="eyebrow">How it works</span>
+      <h2 class="sh">No surprises.</h2>
+      <div class="steps">
+        <div class="step"><span class="n">01</span><div><div class="nm">Discovery call — free</div><div class="ds">Tell me what you're fixing. I get to the real problem and tell you straight what's worth building.</div></div></div>
+        <div class="step"><span class="n">02</span><div><div class="nm">Scoped proposal — flat rate</div><div class="ds">Exactly what gets built, what it costs, how long. Agreed before work starts.</div></div></div>
+        <div class="step"><span class="n">03</span><div><div class="nm">Build &amp; review</div><div class="ds">You see real, running software at each stage — not mockups you have to imagine.</div></div></div>
+        <div class="step"><span class="n">04</span><div><div class="nm">Deploy &amp; stick around</div><div class="ds">I deploy it, walk you through it, and stay reachable.</div></div></div>
+      </div>
+    </section>
+
+    <!-- 5 · CONTACT -->
+    <section class="tile" id="contact" aria-label="Contact">
+      <span class="eyebrow">Get in touch</span>
+      <h2 class="sh">Let's build.</h2>
+      <p class="lead">A process that needs to be faster, a tool that needs to exist? I reply within one business day — usually the same day.</p>
+      <form class="cform" id="cform" novalidate>
+        <input type="hidden" name="access_key" value="75aa6456-ed71-45be-a4ba-6037b67505bd">
+        <input type="hidden" name="subject" value="New Lead — Chance IT Studio">
+        <input type="hidden" name="from_name" value="Chance IT Studio Contact Form">
+        <input type="hidden" name="redirect" value="false">
+        <input type="checkbox" name="botcheck" class="honeypot" tabindex="-1" autocomplete="off">
+        <div class="frow">
+          <div class="field"><label for="f-name">Name</label>
+            <input type="text" id="f-name" name="name" placeholder="Jane Smith" autocomplete="name" maxlength="100" required></div>
+          <div class="field"><label for="f-email">Email</label>
+            <input type="email" id="f-email" name="email" placeholder="jane@company.com" autocomplete="email" maxlength="200" required></div>
+        </div>
+        <div class="field"><label for="f-msg">What do you need built?</label>
+          <textarea id="f-msg" name="message" placeholder="Describe the problem. The messier the better." maxlength="3000" required></textarea></div>
+        <div class="form-foot">
+          <button type="submit" class="btn btn-fill" id="fsubmit">Send it →</button>
+          <span id="fstatus"></span>
+        </div>
+      </form>
       <div class="contact-links">
-        <a href="https://github.com/CjCrump" target="_blank" class="clink">GitHub — CjCrump</a>
-        <a href="https://www.facebook.com/ChanceITstudio/" class="clink">Facebook</a>
-        <a href="https://chanceitstudio.com" target="_blank" class="clink">chanceitstudio.com</a>
+        <a class="clink" href="https://github.com/CjCrump" target="_blank" rel="noopener">GitHub</a>
+        <a class="clink" href="https://www.facebook.com/ChanceITstudio/" target="_blank" rel="noopener">Facebook</a>
+        <a class="clink" href="https://chanceitstudio.com" target="_blank" rel="noopener">chanceitstudio.com</a>
       </div>
-    </div>
-    <form class="cform reveal" id="cform" novalidate>
-      <!-- Web3Forms access key — replace with yours from web3forms.com -->
-      <input type="hidden" name="access_key" value="75aa6456-ed71-45be-a4ba-6037b67505bd">
-      <input type="hidden" name="subject" value="New Lead — Chance IT Studio">
-      <input type="hidden" name="from_name" value="Chance IT Studio Contact Form">
-      <input type="hidden" name="redirect" value="false">
+      <div class="copy">© 2026 Chance IT Studio LLC — Built in Illinois.</div>
+    </section>
 
-      <!-- Honeypot: hidden from humans, bots fill it, submission dies -->
-      <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off">
-
-      <div class="form-row">
-        <div class="field">
-          <label for="f-name">Name</label>
-          <input type="text" id="f-name" name="name" placeholder="Jane Smith"
-            autocomplete="name" maxlength="100" required>
-        </div>
-        <div class="field">
-          <label for="f-email">Email</label>
-          <input type="email" id="f-email" name="email" placeholder="jane@company.com"
-            autocomplete="email" maxlength="200" required>
-        </div>
-      </div>
-      <div class="field">
-        <label for="f-msg">What do you need built?</label>
-        <textarea id="f-msg" name="message"
-          placeholder="Describe the problem. The messier the better — I like a challenge."
-          maxlength="3000" required></textarea>
-      </div>
-      <div class="form-foot">
-        <button type="submit" class="btn btn-green" id="fsubmit">Send It →</button>
-        <span id="fstatus"></span>
-      </div>
-    </form>
   </div>
-</section>
 
-<!-- ══ FOOTER ══ -->
-<footer>
-  <a href="#home" class="nav-logo" style="opacity:.65">
-    <picture>
-      <source srcset="CIT-white-bg.png" media="(prefers-color-scheme: light)">
-      <img src="CIT-black-bg.png" alt="Chance IT Studio" class="logo-img">
-    </picture>
-    <svg width="7" height="10" viewBox="0 0 16 26" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;margin-left:-2px;margin-bottom:-3px;">
-      <polygon points="0,0 0,22 5.5,16 10,26 13,24.5 8.5,14.5 16,14.5" fill="var(--white)"/>
-    </svg>
-  </a>
-  <div class="footer-copy">© 2026 Chance IT Studio LLC — Built in Illinois.</div>
-  <ul class="footer-links">
-    <li><a href="https://github.com/CjCrump" target="_blank">GitHub</a></li>
-    <li><a href="https://www.facebook.com/ChanceITstudio/">Facebook</a></li>
-    <li><a href="https://chanceitstudio.com" target="_blank">chanceitstudio.com</a></li>
-  </ul>
-</footer>
+  <!-- avatar + rewind / fast-forward (centered at the bottom of the wheel) -->
+  <div class="deck" id="deck">
+    <button class="ctrl" id="rw" aria-label="Previous section (hold to spin)">
+      <svg viewBox="0 0 24 24"><path d="M11 6v12l-8-6zM21 6v12l-8-6z"/></svg>
+    </button>
 
-<script>
-/* ── NAV SCROLL ── */
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 50));
+    <!-- AVATAR — placeholder until sprite sheet arrives. JS drives run speed + facing. -->
+    <div class="runner" id="runner" aria-hidden="true">
+      <svg width="40" height="50" viewBox="0 0 24 30">
+        <circle cx="12" cy="5" r="3.6" fill="#eeeeff"/>
+        <rect x="10.3" y="8.2" width="3.4" height="10" rx="1.5" fill="#eeeeff"/>
+        <rect id="arm"  x="11" y="9.2" width="2.6" height="7" rx="1.3" fill="#00cc7a"/>
+        <rect class="leg" id="legB" x="10.6" y="17.4" width="2.8" height="9.4" rx="1.4" fill="#9a9ab2"/>
+        <rect class="leg" id="legF" x="10.6" y="17.4" width="2.8" height="9.4" rx="1.4" fill="#eeeeff"/>
+      </svg>
+    </div>
 
-/* ── SCROLL REVEAL ── */
-const obs = new IntersectionObserver((entries) => {
-  entries.forEach((e, i) => {
-    if (e.isIntersecting) {
-      setTimeout(() => e.target.classList.add('in'), i * 70);
-      obs.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.08 });
-document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    <button class="ctrl" id="ff" aria-label="Next section (hold to spin)">
+      <svg viewBox="0 0 24 24"><path d="M13 6v12l8-6zM3 6v12l8-6z"/></svg>
+    </button>
+  </div>
 
-/* ── CONTACT FORM — Web3Forms + spam protection ── */
-const form     = document.getElementById('cform');
-const status   = document.getElementById('fstatus');
-const btn      = document.getElementById('fsubmit');
+  <div class="hint" id="hint">swipe · drag · arrows — or hold ◄◄ ►►</div>
+</main>
 
-// Track when the page loaded so we can measure time-on-page before submit
-const pageLoadTime = Date.now();
-
-// Rate-limit: track submission timestamps in sessionStorage
-function getSubmitLog() {
-  try { return JSON.parse(sessionStorage.getItem('_cit_sl') || '[]'); }
-  catch { return []; }
-}
-function recordSubmit() {
-  const log = getSubmitLog();
-  log.push(Date.now());
-  // Keep only last 5
-  sessionStorage.setItem('_cit_sl', JSON.stringify(log.slice(-5)));
-}
-function tooManySubmits() {
-  const log = getSubmitLog();
-  const oneHour = 60 * 60 * 1000;
-  const recent = log.filter(t => Date.now() - t < oneHour);
-  return recent.length >= 3; // max 3 per hour per session
-}
-
-function setStatus(msg, isError) {
-  status.textContent = msg;
-  status.style.color = isError ? 'var(--orange)' : 'var(--green)';
-  status.style.opacity = '1';
-  if (!isError) setTimeout(() => { status.style.opacity = '0'; }, 6000);
-}
-
-form.addEventListener('submit', async e => {
-  e.preventDefault();
-
-  // 1. Honeypot check — bots fill this, humans never see it
-  if (form.querySelector('[name="botcheck"]').checked) return;
-
-  // 2. Time-on-page check — real users take > 3 seconds to fill a form
-  if (Date.now() - pageLoadTime < 3000) return;
-
-  // 3. Session rate limit
-  if (tooManySubmits()) {
-    setStatus('✕ Too many submissions. Try again later.', true);
-    return;
-  }
-
-  // 4. Basic field sanity — strip and re-validate
-  const nameVal  = form.querySelector('[name="name"]').value.trim();
-  const emailVal = form.querySelector('[name="email"]').value.trim();
-  const msgVal   = form.querySelector('[name="message"]').value.trim();
-
-  if (!nameVal || !emailVal || !msgVal) {
-    setStatus('✕ Please fill in all fields.', true);
-    return;
-  }
-
-  // 5. Rudimentary email format check
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(emailVal)) {
-    setStatus('✕ Check your email address.', true);
-    return;
-  }
-
-  // 6. Message must be at least 20 chars — weeds out single-word spam
-  if (msgVal.length < 20) {
-    setStatus('✕ Tell me a bit more about your project.', true);
-    return;
-  }
-
-  // All checks passed — submit
-  btn.disabled = true;
-  btn.textContent = 'Sending…';
-
-  try {
-    const formData = new FormData(form);
-    // Override with trimmed values
-    formData.set('name',    nameVal);
-    formData.set('email',   emailVal);
-    formData.set('message', msgVal);
-
-    const res  = await fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      body: formData
-    });
-    const json = await res.json();
-
-    if (json.success) {
-      recordSubmit();
-      setStatus('✓ Sent. I\'ll be in touch soon.', false);
-      form.reset();
-    } else {
-      setStatus('✕ Something went wrong. Try again.', true);
-    }
-  } catch {
-    setStatus('✕ Network error. Check your connection.', true);
-  } finally {
-    btn.disabled = false;
-    btn.textContent = 'Send It →';
-  }
-});
-</script>
+<script src="script.js" defer></script>
 </body>
 </html>
