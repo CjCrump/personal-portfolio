@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Chance IT Studio</title>
+<meta name="description" content="Notes on building custom web apps, running a homelab, and the products behind Chance IT Studio.">
+<link rel="canonical" href="https://chanceitstudio.com/blog/">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanceitstudio.com/blog/">
+<meta property="og:title" content="Blog — Chance IT Studio">
+<meta property="og:description" content="Notes on building custom web apps, running a homelab, and the products behind Chance IT Studio.">
+<meta property="og:image" content="https://chanceitstudio.com/CIT-black-bg.png">
+<meta property="og:site_name" content="Chance IT Studio">
+
+<link rel="icon" type="image/png" href="/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Bebas+Neue&family=Syne:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/blog/blog.css">
+</head>
+<body>
+
+<nav id="nav">
+  <a href="/" class="nav-logo">
+    <picture>
+      <source srcset="/CIT-white-bg.png" media="(prefers-color-scheme: light)">
+      <img src="/CIT-black-bg.png" alt="Chance IT Studio" class="logo-img">
+    </picture>
+    <span class="logo-sub">Studio</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/#about">About</a></li>
+    <li><a href="/#work">Work</a></li>
+    <li><a href="/#services">Services</a></li>
+    <li><a href="/blog/" class="active">Blog</a></li>
+    <li><a href="/#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<main class="blog-wrap">
+  <header class="blog-header">
+    <div class="blog-eyebrow">Notes &amp; Builds</div>
+    <h1 class="blog-h1">The Blog</h1>
+  </header>
+
+  <div class="chip-row" id="chipRow">
+    <button class="chip active" data-cat="all">All</button>
+    <button class="chip" data-cat="education">Education</button>
+    <button class="chip" data-cat="homelab">Homelab</button>
+    <button class="chip" data-cat="tcmvp">TCMVP</button>
+    <button class="chip" data-cat="smokesignal">SmokeSignal</button>
+    <button class="chip" data-cat="gloveson">GlovesOn</button>
+    <button class="chip" data-cat="ttdice">TTDice</button>
+  </div>
+
+  <div class="post-grid" id="postGrid">
+    <div class="post-empty">Loading posts…</div>
+  </div>
+</main>
+
+<footer>
+  <a href="/" class="nav-logo" style="opacity:.65">
+    <picture>
+      <source srcset="/CIT-white-bg.png" media="(prefers-color-scheme: light)">
+      <img src="/CIT-black-bg.png" alt="Chance IT Studio" class="logo-img">
+    </picture>
+  </a>
+  <div class="footer-copy">© 2026 Chance IT Studio LLC — Built in Illinois.</div>
+  <ul class="footer-links">
+    <li><a href="https://github.com/CjCrump" target="_blank">GitHub</a></li>
+    <li><a href="https://www.facebook.com/ChanceITstudio/" target="_blank">Facebook</a></li>
+    <li><a href="/">chanceitstudio.com</a></li>
+  </ul>
+</footer>
+
+<script>
+const CAT_LABELS = { education:'Education', homelab:'Homelab', tcmvp:'TCMVP', smokesignal:'SmokeSignal', gloveson:'GlovesOn', ttdice:'TTDice', general:'General' };
+
+let posts = [];
+let activeCat = 'all';
+
+function fmtDate(iso) {
+  const d = new Date(iso + 'T00:00:00');
+  return d.toLocaleDateString('en-US', { month:'short', day:'numeric', year:'numeric' });
+}
+
+function render() {
+  const grid = document.getElementById('postGrid');
+  const list = posts
+    .filter(p => activeCat === 'all' || p.category === activeCat)
+    .sort((a,b) => b.date.localeCompare(a.date));
+
+  if (!list.length) {
+    grid.innerHTML = '<div class="post-empty">No posts in this category yet.</div>';
+    return;
+  }
+
+  grid.innerHTML = list.map(p => `
+    <a class="post-card" href="/blog/posts/${p.slug}.html">
+      <div class="post-meta">${CAT_LABELS[p.category] || p.category}<span class="sep">/</span>${fmtDate(p.date)}<span class="sep">/</span>${p.readMins} min read</div>
+      <div class="post-title">${p.title}</div>
+      <div class="post-excerpt">${p.excerpt}</div>
+    </a>
+  `).join('');
+}
+
+document.getElementById('chipRow').addEventListener('click', e => {
+  const btn = e.target.closest('.chip');
+  if (!btn) return;
+  document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+  btn.classList.add('active');
+  activeCat = btn.dataset.cat;
+  render();
+});
+
+fetch('/blog/data/posts.json')
+  .then(r => r.json())
+  .then(data => { posts = data; render(); })
+  .catch(() => {
+    document.getElementById('postGrid').innerHTML = '<div class="post-empty">Couldn\'t load posts.</div>';
+  });
+</script>
+</body>
+</html>

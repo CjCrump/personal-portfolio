@@ -1,0 +1,90 @@
+<!--
+  POST CONTENT CONTRACT — fill every {{SLOT}} below, then:
+  1. Save as /blog/posts/{{slug}}.html
+  2. Add a matching entry to /blog/data/posts.json
+  Categories: education | homelab | tcmvp | smokesignal | gloveson | ttdice | general
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{TITLE}} — Chance IT Studio</title>
+<meta name="description" content="{{DEK}}">
+<link rel="canonical" href="https://chanceitstudio.com/blog/posts/{{SLUG}}.html">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://chanceitstudio.com/blog/posts/{{SLUG}}.html">
+<meta property="og:title" content="{{TITLE}}">
+<meta property="og:description" content="{{DEK}}">
+<meta property="og:image" content="https://chanceitstudio.com/CIT-black-bg.png">
+<meta property="og:site_name" content="Chance IT Studio">
+
+<link rel="icon" type="image/png" href="/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Bebas+Neue&family=Syne:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/blog/blog.css">
+</head>
+<body>
+
+<nav id="nav">
+  <a href="/" class="nav-logo">
+    <picture>
+      <source srcset="/CIT-white-bg.png" media="(prefers-color-scheme: light)">
+      <img src="/CIT-black-bg.png" alt="Chance IT Studio" class="logo-img">
+    </picture>
+    <span class="logo-sub">Studio</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/#about">About</a></li>
+    <li><a href="/#work">Work</a></li>
+    <li><a href="/#services">Services</a></li>
+    <li><a href="/blog/" class="active">Blog</a></li>
+    <li><a href="/#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<main class="blog-wrap">
+  <a href="/blog/" class="post-back">&larr; All posts</a>
+
+  <header>
+    <div class="post-hero-meta">{{CATEGORY_LABEL}} / {{DATE_DISPLAY}} / {{READ_MINS}} min read</div>
+    <h1 class="post-hero-title">{{TITLE}}</h1>
+    <p class="post-dek">{{DEK}}</p>
+  </header>
+
+  <article class="post-body">
+    <!-- BODY: use <h2> per section, <p> for prose, <pre><code> for code blocks -->
+    <h2>{{SECTION_1_HEADING}}</h2>
+    <p>{{SECTION_1_BODY}}</p>
+
+    <h2>{{SECTION_2_HEADING}}</h2>
+    <p>{{SECTION_2_BODY}}</p>
+
+    <!-- Optional code block -->
+    <!-- <pre><code>{{CODE}}</code></pre> -->
+
+    <div class="post-cta">
+      <p>{{CTA_TEXT}}</p>
+      <a class="btn" href="{{CTA_LINK}}">{{CTA_LABEL}} &rarr;</a>
+    </div>
+  </article>
+</main>
+
+<footer>
+  <a href="/" class="nav-logo" style="opacity:.65">
+    <picture>
+      <source srcset="/CIT-white-bg.png" media="(prefers-color-scheme: light)">
+      <img src="/CIT-black-bg.png" alt="Chance IT Studio" class="logo-img">
+    </picture>
+  </a>
+  <div class="footer-copy">© 2026 Chance IT Studio LLC — Built in Illinois.</div>
+  <ul class="footer-links">
+    <li><a href="https://github.com/CjCrump" target="_blank">GitHub</a></li>
+    <li><a href="https://www.facebook.com/ChanceITstudio/" target="_blank">Facebook</a></li>
+    <li><a href="/">chanceitstudio.com</a></li>
+  </ul>
+</footer>
+
+</body>
+</html>

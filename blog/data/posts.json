@@ -1,0 +1,18 @@
+[
+  {
+    "slug": "rps-became-ttdice",
+    "title": "Why My Rock-Paper-Scissors Project Became a Dice Roller",
+    "tags": ["education", "ttdice"],
+    "date": "2026-08-26",
+    "excerpt": "The Odin Project has you build Rock Paper Scissors as a course project. I ended up pointing that same logic at a dice roller instead.",
+    "readMins": 3
+  },
+  {
+    "slug": "calculator-became-gloveson",
+    "title": "The Course Calculator That Became a Jobsite Tool",
+    "tags": ["education", "gloveson"],
+    "date": "2026-08-26",
+    "excerpt": "The Odin Project's Calculator project just wants a working four function calculator. Mine kept growing until it turned into GlovesOn, a concrete calculator I actually use on the job.",
+    "readMins": 3
+  }
+]
