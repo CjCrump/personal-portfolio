@@ -241,6 +241,10 @@
   /* ---------- resize ---------- */
   window.addEventListener('resize', geo);
   window.addEventListener('orientationchange', geo);
+  window.addEventListener('hashchange', function () {
+    var idx = NAMES.findIndex(function (nm) { return '#' + nm.toLowerCase() === location.hash.toLowerCase(); });
+    if (idx >= 0) setTarget(idx);
+  });
   if (window.visualViewport) visualViewport.addEventListener('resize', geo);
 
   /* ============================================================
@@ -277,7 +281,11 @@
 
   /* ---------- init ---------- */
   geo();
-  onActive(0);
+  (function initFromHash() {
+    var idx = NAMES.findIndex(function (nm) { return '#' + nm.toLowerCase() === location.hash.toLowerCase(); });
+    if (idx > 0) { rot = target = rotForIndex(idx); onActive(idx); }
+    else { onActive(0); }
+  })();
   place();
   requestAnimationFrame(frame);
 })();

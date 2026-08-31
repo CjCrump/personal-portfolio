@@ -12,10 +12,10 @@
 <meta property="og:url" content="https://chanceitstudio.com/blog/">
 <meta property="og:title" content="Blog — Chance IT Studio">
 <meta property="og:description" content="Notes on building custom web apps, running a homelab, and the products behind Chance IT Studio.">
-<meta property="og:image" content="https://chanceitstudio.com/CIT-black-bg.png">
+<meta property="og:image" content="https://chanceitstudio.com/img/CIT-black-bg.png">
 <meta property="og:site_name" content="Chance IT Studio">
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" type="image/png" href="/img/favicon.png">
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Bebas+Neue&family=Syne:wght@400;500;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/blog/blog.css">
 </head>
@@ -24,8 +24,8 @@
 <nav id="nav">
   <a href="/" class="nav-logo">
     <picture>
-      <source srcset="/CIT-white-bg.png" media="(prefers-color-scheme: light)">
-      <img src="/CIT-black-bg.png" alt="Chance IT Studio" class="logo-img">
+      <source srcset="/img/CIT-white-bg.png" media="(prefers-color-scheme: light)">
+      <img src="/img/CIT-black-bg.png" alt="Chance IT Studio" class="logo-img">
     </picture>
     <span class="logo-sub">Studio</span>
   </a>
@@ -62,8 +62,8 @@
 <footer>
   <a href="/" class="nav-logo" style="opacity:.65">
     <picture>
-      <source srcset="/CIT-white-bg.png" media="(prefers-color-scheme: light)">
-      <img src="/CIT-black-bg.png" alt="Chance IT Studio" class="logo-img">
+      <source srcset="/img/CIT-white-bg.png" media="(prefers-color-scheme: light)">
+      <img src="/img/CIT-black-bg.png" alt="Chance IT Studio" class="logo-img">
     </picture>
   </a>
   <div class="footer-copy">© 2026 Chance IT Studio LLC — Built in Illinois.</div>
@@ -88,7 +88,7 @@ function fmtDate(iso) {
 function render() {
   const grid = document.getElementById('postGrid');
   const list = posts
-    .filter(p => activeCat === 'all' || p.category === activeCat)
+    .filter(p => activeCat === 'all' || p.tags.includes(activeCat))
     .sort((a,b) => b.date.localeCompare(a.date));
 
   if (!list.length) {
@@ -98,7 +98,7 @@ function render() {
 
   grid.innerHTML = list.map(p => `
     <a class="post-card" href="/blog/posts/${p.slug}.html">
-      <div class="post-meta">${CAT_LABELS[p.category] || p.category}<span class="sep">/</span>${fmtDate(p.date)}<span class="sep">/</span>${p.readMins} min read</div>
+      <div class="post-meta">${p.tags.map(t => CAT_LABELS[t] || t).join(' · ')}<span class="sep">/</span>${fmtDate(p.date)}<span class="sep">/</span>${p.readMins} min read</div>
       <div class="post-title">${p.title}</div>
       <div class="post-excerpt">${p.excerpt}</div>
     </a>
