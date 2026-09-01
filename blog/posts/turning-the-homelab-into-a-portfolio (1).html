@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Turning the Homelab Into a Portfolio — Chance IT Studio</title>
+<meta name="description" content="I'm self-taught with no IT job history. The homelab repo ended up doing more for my career transition than any certificate would have.">
+<link rel="canonical" href="https://chanceitstudio.com/blog/posts/turning-the-homelab-into-a-portfolio.html">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://chanceitstudio.com/blog/posts/turning-the-homelab-into-a-portfolio.html">
+<meta property="og:title" content="Turning the Homelab Into a Portfolio">
+<meta property="og:description" content="I'm self-taught with no IT job history. The homelab repo ended up doing more for my career transition than any certificate would have.">
+<meta property="og:image" content="https://chanceitstudio.com/img/CIT-black-bg.png">
+<meta property="og:site_name" content="Chance IT Studio">
+
+<link rel="icon" type="image/png" href="/img/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Bebas+Neue&family=Syne:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/blog/blog.css">
+</head>
+<body>
+
+<nav id="nav">
+  <a href="/" class="nav-logo">
+    <picture>
+      <source srcset="/img/CIT-white-bg.png" media="(prefers-color-scheme: light)">
+      <img src="/img/CIT-black-bg.png" alt="Chance IT Studio" class="logo-img">
+    </picture>
+    <span class="logo-sub">Studio</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/#about">About</a></li>
+    <li><a href="/#work">Work</a></li>
+    <li><a href="/#services">Services</a></li>
+    <li><a href="/blog/" class="active">Blog</a></li>
+    <li><a href="/#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<main class="blog-wrap">
+  <a href="/blog/" class="post-back">&larr; All posts</a>
+
+  <header>
+    <div class="post-hero-meta">Education / Homelab / August 31, 2026 / 5 min read</div>
+    <h1 class="post-hero-title">Turning the Homelab Into a Portfolio</h1>
+    <p class="post-dek">No formal IT job history, no certificate. Just a fleet of machines and a repo that tells the truth about how they got built.</p>
+  </header>
+
+  <article class="post-body">
+    <h2>The credential problem</h2>
+    <p>I'm self-taught. I don't have a resume full of IT jobs to point to, and that's a real problem when you're trying to convince someone to take a chance on you for DevOps or infrastructure work. What I do have is a working fleet of machines I built, broke, and fixed myself, and at some point it clicked that this was worth more than a certificate if I presented it right.</p>
+
+    <h2>Cleaning it up for strangers</h2>
+    <p>The homelab as it existed in my house was full of things that shouldn't go public: real IP addresses, my router's DDNS hostname, actual usernames. Before any of it went on GitHub I scrubbed every file, swapping real hostnames for semantic ones like <code>desktop</code>, <code>hp-node</code>, and <code>nas-node</code>, and pulled the octets out of every config example.</p>
+
+    <h2>Making the repo actually useful</h2>
+    <p>A folder of scripts isn't a portfolio, it's a junk drawer. I wrote real Docker Compose files for every service running on the fleet, a README with an honest architecture diagram, and a set of short architecture decision records explaining choices like Caddy over Nginx and Tailscale over opening ports on my router. Those ADRs matter more than the code, because anyone can copy a docker-compose file off Stack Overflow.</p>
+    <p>Some of the reasoning is easier to defend than others. If someone asked me why I went with a ZFS pool instead of hardware RAID, the honest answer is that I wanted to stay modular. Those drives were never going to live in one machine forever, and I knew it going in. ZFS ties the pool to the disks, not to a RAID card bolted to one motherboard, so I could pull the drives, drop them into a completely different box, and import the pool without starting over. I'm not sure that's the "correct" textbook answer, but it's the real one, and I'd rather write down the actual reason I made a call than invent a cleaner one after the fact.</p>
+
+    <h2>What it's actually done for me</h2>
+    <p>The repo has become the thing I point people to instead of a resume line. It shows real decisions, real mistakes I owned up to in the troubleshooting log, and a system that's still running today, not a tutorial I followed once and tore down. That's turned out to be a better pitch than I expected for someone trying to break into this field without the usual paper trail.</p>
+
+    <div class="post-cta">
+      <p>Want to see the actual repo, docs and all?</p>
+      <a class="btn" href="https://github.com/CjCrump/homelab" target="_blank">View the homelab on GitHub &rarr;</a>
+    </div>
+  </article>
+</main>
+
+<footer>
+  <a href="/" class="nav-logo" style="opacity:.65">
+    <picture>
+      <source srcset="/img/CIT-white-bg.png" media="(prefers-color-scheme: light)">
+      <img src="/img/CIT-black-bg.png" alt="Chance IT Studio" class="logo-img">
+    </picture>
+  </a>
+  <div class="footer-copy">© 2026 Chance IT Studio LLC — Built in Illinois.</div>
+  <ul class="footer-links">
+    <li><a href="https://github.com/CjCrump" target="_blank">GitHub</a></li>
+    <li><a href="https://www.facebook.com/ChanceITstudio/" target="_blank">Facebook</a></li>
+    <li><a href="/">chanceitstudio.com</a></li>
+  </ul>
+</footer>
+
+</body>
+</html>

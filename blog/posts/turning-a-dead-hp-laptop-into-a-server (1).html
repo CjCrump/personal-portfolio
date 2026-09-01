@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Turning a Dead HP Laptop Into a Server — Chance IT Studio</title>
+<meta name="description" content="An i3-8145U with the lid taped shut now runs Vaultwarden, Gitea, and Caddy for the whole house. Here's what it took and what I turned back off.">
+<link rel="canonical" href="https://chanceitstudio.com/blog/posts/turning-a-dead-hp-laptop-into-a-server.html">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://chanceitstudio.com/blog/posts/turning-a-dead-hp-laptop-into-a-server.html">
+<meta property="og:title" content="Turning a Dead HP Laptop Into a Server">
+<meta property="og:description" content="An i3-8145U with the lid taped shut now runs Vaultwarden, Gitea, and Caddy for the whole house. Here's what it took and what I turned back off.">
+<meta property="og:image" content="https://chanceitstudio.com/img/CIT-black-bg.png">
+<meta property="og:site_name" content="Chance IT Studio">
+
+<link rel="icon" type="image/png" href="/img/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Bebas+Neue&family=Syne:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/blog/blog.css">
+</head>
+<body>
+
+<nav id="nav">
+  <a href="/" class="nav-logo">
+    <picture>
+      <source srcset="/img/CIT-white-bg.png" media="(prefers-color-scheme: light)">
+      <img src="/img/CIT-black-bg.png" alt="Chance IT Studio" class="logo-img">
+    </picture>
+    <span class="logo-sub">Studio</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/#about">About</a></li>
+    <li><a href="/#work">Work</a></li>
+    <li><a href="/#services">Services</a></li>
+    <li><a href="/blog/" class="active">Blog</a></li>
+    <li><a href="/#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<main class="blog-wrap">
+  <a href="/blog/" class="post-back">&larr; All posts</a>
+
+  <header>
+    <div class="post-hero-meta">Homelab / August 27, 2026 / 6 min read</div>
+    <h1 class="post-hero-title">Turning a Dead HP Laptop Into a Server</h1>
+    <p class="post-dek">A budget i3 with the lid closed and disabled, running the household's password vault and git server around the clock.</p>
+  </header>
+
+  <article class="post-body">
+    <h2>Not exactly server hardware</h2>
+    <p>The HP Laptop 15-dw0037wm is not a machine anyone would spec out as a server. It's an i3-8145U, 8GB of RAM, a spinning 5400rpm hard drive. It was sitting around unused, and it became the answer to a problem I was actually having in the middle of building tcmvp and smokesignal: I was working off both my desktop and my laptop, sometimes with the laptop out at a client site or with my partner on smokesignal, and I needed code to stay in sync between them without relying on GitHub for every single commit. Step one was making Ubuntu Server treat this box like a server and not a laptop, which meant editing <code>/etc/systemd/logind.conf</code> to set <code>HandleLidSwitch=ignore</code> so I could close the lid without it going to sleep. Small thing, but without it the whole plan doesn't work.</p>
+
+    <h2>Gitea first, everything else second</h2>
+    <p>Gitea was the actual reason this box exists. It gave me a private git remote sitting on my own network, so I could push from the desktop after a work session, pull on the laptop before heading out, and not think about it. GitHub stayed the public, primary remote for these projects, but Gitea meant I always had a fast internal push/pull I controlled, and a second copy of the code that didn't depend on GitHub being reachable.</p>
+
+    <h2>Stacking more on top</h2>
+    <p>Once the box was up and doing that job well, it made sense to give it more work. Vaultwarden runs on it now for the household's passwords. TeamSpeak runs for voice chat. None of these need much horsepower, they need to just be there, and this box already was.</p>
+
+    <h2>The Caddy problem that ate an evening</h2>
+    <p>Getting HTTPS working for these services locally took longer than the rest of the setup combined. Caddy's <code>tls internal</code> directive generates its own local certificate authority and signs certs with it, which sounds like it should just work. It does, on the server. The part I missed is that every client machine also has to trust that local CA, not just accept the cert. Once I ran <code>update-ca-certificates</code> on my desktop and pointed it at Caddy's root cert, the browser warnings stopped and vault.lan started working like a real HTTPS site.</p>
+
+    <h2>Pi-hole: on, then off</h2>
+    <p>I also set up Pi-hole on this box for network-wide ad blocking, moving its web interface off ports 80/443 so it wouldn't collide with Caddy. It worked. It also worked too well, blocking things aggressively enough that it started breaking normal browsing for the household, so I turned it off. The container is still sitting there, just not doing anything right now. I haven't decided if I want to go back and tune the blocklists or just leave ad blocking off the table for this network.</p>
+
+    <div class="post-cta">
+      <p>With this box handling services, the NAS itself was still sitting on my desktop, waiting to move.</p>
+      <a class="btn" href="/blog/posts/moving-the-nas-off-my-desktop.html">Read the migration story &rarr;</a>
+    </div>
+  </article>
+</main>
+
+<footer>
+  <a href="/" class="nav-logo" style="opacity:.65">
+    <picture>
+      <source srcset="/img/CIT-white-bg.png" media="(prefers-color-scheme: light)">
+      <img src="/img/CIT-black-bg.png" alt="Chance IT Studio" class="logo-img">
+    </picture>
+  </a>
+  <div class="footer-copy">© 2026 Chance IT Studio LLC — Built in Illinois.</div>
+  <ul class="footer-links">
+    <li><a href="https://github.com/CjCrump" target="_blank">GitHub</a></li>
+    <li><a href="https://www.facebook.com/ChanceITstudio/" target="_blank">Facebook</a></li>
+    <li><a href="/">chanceitstudio.com</a></li>
+  </ul>
+</footer>
+
+</body>
+</html>

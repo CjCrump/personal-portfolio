@@ -1,5 +1,13 @@
 [
   {
+    "slug": "why-i-started-a-homelab",
+    "title": "Why I Started a Homelab (And Why It Was Just a Samba Share)",
+    "tags": ["homelab"],
+    "date": "2026-02-10",
+    "excerpt": "The homelab didn't start as a plan. It started because I got tired of my desktop being the only copy of my family's files.",
+    "readMins": 4
+  },
+  {
     "slug": "rps-became-ttdice",
     "title": "Why My Rock-Paper-Scissors Project Became a Dice Roller",
     "tags": ["education", "ttdice"],
@@ -14,5 +22,37 @@
     "date": "2026-08-26",
     "excerpt": "The Odin Project's Calculator project just wants a working four function calculator. Mine kept growing until it turned into GlovesOn, a concrete calculator I actually use on the job.",
     "readMins": 3
+  },
+  {
+    "slug": "turning-a-dead-hp-laptop-into-a-server",
+    "title": "Turning a Dead HP Laptop Into a Server",
+    "tags": ["homelab"],
+    "date": "2026-03-27",
+    "excerpt": "An i3-8145U with the lid taped shut now runs Vaultwarden, Gitea, and Caddy for the whole house. Here's what it took and what I turned back off.",
+    "readMins": 6
+  },
+  {
+    "slug": "moving-the-nas-off-my-desktop",
+    "title": "Moving the NAS Off My Desktop (And What ZFS Doesn't Tell You)",
+    "tags": ["homelab"],
+    "date": "2026-07-18",
+    "excerpt": "Migrating a ZFS mirror to a dedicated box sounds simple. It is, until you forget that file ownership follows UID, not username.",
+    "readMins": 5
+  },
+  {
+    "slug": "finishing-foundations",
+    "title": "What Finishing Foundations Actually Taught Me. 1 yr later",
+    "tags": ["education", "general"],
+    "date": "2026-03-05",
+    "excerpt": "I used to type console commands to fix a broken game save without knowing that was basically code. Here's what finishing The Odin Project's Foundations course actually taught me.",
+    "readMins": 4
+  },
+  {
+    "slug": "turning-the-homelab-into-a-portfolio",
+    "title": "Turning the Homelab Into a Portfolio",
+    "tags": ["education", "homelab"],
+    "date": "2026-08-31",
+    "excerpt": "I'm self-taught with no IT job history. The homelab repo ended up doing more for my career transition than any certificate would have.",
+    "readMins": 5
   }
 ]

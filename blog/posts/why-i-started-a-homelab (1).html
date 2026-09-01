@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why I Started a Homelab (And Why It Was Just a Samba Share) — Chance IT Studio</title>
+<meta name="description" content="The homelab didn't start as a plan. It started because I got tired of my desktop being the only copy of my family's files.">
+<link rel="canonical" href="https://chanceitstudio.com/blog/posts/why-i-started-a-homelab.html">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://chanceitstudio.com/blog/posts/why-i-started-a-homelab.html">
+<meta property="og:title" content="Why I Started a Homelab (And Why It Was Just a Samba Share)">
+<meta property="og:description" content="The homelab didn't start as a plan. It started because I got tired of my desktop being the only copy of my family's files.">
+<meta property="og:image" content="https://chanceitstudio.com/img/CIT-black-bg.png">
+<meta property="og:site_name" content="Chance IT Studio">
+
+<link rel="icon" type="image/png" href="/img/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Bebas+Neue&family=Syne:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/blog/blog.css">
+</head>
+<body>
+
+<nav id="nav">
+  <a href="/" class="nav-logo">
+    <picture>
+      <source srcset="/img/CIT-white-bg.png" media="(prefers-color-scheme: light)">
+      <img src="/img/CIT-black-bg.png" alt="Chance IT Studio" class="logo-img">
+    </picture>
+    <span class="logo-sub">Studio</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/#about">About</a></li>
+    <li><a href="/#work">Work</a></li>
+    <li><a href="/#services">Services</a></li>
+    <li><a href="/blog/" class="active">Blog</a></li>
+    <li><a href="/#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<main class="blog-wrap">
+  <a href="/blog/" class="post-back">&larr; All posts</a>
+
+  <header>
+    <div class="post-hero-meta">Homelab / August 24, 2026 / 4 min read</div>
+    <h1 class="post-hero-title">Why I Started a Homelab (And Why It Was Just a Samba Share)</h1>
+    <p class="post-dek">No grand plan here. One desktop, two hard drives, and a problem I was tired of having.</p>
+  </header>
+
+  <article class="post-body">
+    <h2>The problem was boring</h2>
+    <p>I didn't set out to build a homelab. I set out to stop losing sleep over my desktop being the only place my family's photos and documents lived. My main machine is a Ryzen 5600G build I use every day, for work and everything else, and it made me nervous that a bad Windows update or a dead drive could take everything with it.</p>
+
+    <h2>The first version was two drives and a share</h2>
+    <p>So the fix was simple, almost embarrassingly so. I put two 8TB IronWolf drives into the desktop in a ZFS mirror, called it <code>ironwolf-mirror</code>, and shared it out over Samba so my laptop and everyone's phones could reach it. That was the entire homelab for a while. One box, one share, no redundancy beyond the mirror itself.</p>
+
+    <h2>Why that wasn't good enough</h2>
+    <p>It worked fine right up until I wanted to swap a GPU or reboot for a driver update, and realized the "NAS" went down every time I touched my daily driver. That's the moment this stopped being a NAS with a computer attached to it and started being a computer with a NAS attached to it, and I didn't like being on the wrong side of that sentence. I didn't have a five year plan when I started. I just knew the files needed to live somewhere that wasn't also my Steam library.</p>
+
+    <div class="post-cta">
+      <p>Next up: giving an old HP laptop a job before the NAS itself ever moved.</p>
+      <a class="btn" href="/blog/posts/turning-a-dead-hp-laptop-into-a-server.html">Read how that box got built &rarr;</a>
+    </div>
+  </article>
+</main>
+
+<footer>
+  <a href="/" class="nav-logo" style="opacity:.65">
+    <picture>
+      <source srcset="/img/CIT-white-bg.png" media="(prefers-color-scheme: light)">
+      <img src="/img/CIT-black-bg.png" alt="Chance IT Studio" class="logo-img">
+    </picture>
+  </a>
+  <div class="footer-copy">© 2026 Chance IT Studio LLC — Built in Illinois.</div>
+  <ul class="footer-links">
+    <li><a href="https://github.com/CjCrump" target="_blank">GitHub</a></li>
+    <li><a href="https://www.facebook.com/ChanceITstudio/" target="_blank">Facebook</a></li>
+    <li><a href="/">chanceitstudio.com</a></li>
+  </ul>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moving the NAS Off My Desktop (And What ZFS Doesn't Tell You) — Chance IT Studio</title>
+<meta name="description" content="Migrating a ZFS mirror to a dedicated box sounds simple. It is, until you forget that file ownership follows UID, not username.">
+<link rel="canonical" href="https://chanceitstudio.com/blog/posts/moving-the-nas-off-my-desktop.html">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://chanceitstudio.com/blog/posts/moving-the-nas-off-my-desktop.html">
+<meta property="og:title" content="Moving the NAS Off My Desktop (And What ZFS Doesn't Tell You)">
+<meta property="og:description" content="Migrating a ZFS mirror to a dedicated box sounds simple. It is, until you forget that file ownership follows UID, not username.">
+<meta property="og:image" content="https://chanceitstudio.com/img/CIT-black-bg.png">
+<meta property="og:site_name" content="Chance IT Studio">
+
+<link rel="icon" type="image/png" href="/img/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Bebas+Neue&family=Syne:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/blog/blog.css">
+</head>
+<body>
+
+<nav id="nav">
+  <a href="/" class="nav-logo">
+    <picture>
+      <source srcset="/img/CIT-white-bg.png" media="(prefers-color-scheme: light)">
+      <img src="/img/CIT-black-bg.png" alt="Chance IT Studio" class="logo-img">
+    </picture>
+    <span class="logo-sub">Studio</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/#about">About</a></li>
+    <li><a href="/#work">Work</a></li>
+    <li><a href="/#services">Services</a></li>
+    <li><a href="/blog/" class="active">Blog</a></li>
+    <li><a href="/#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<main class="blog-wrap">
+  <a href="/blog/" class="post-back">&larr; All posts</a>
+
+  <header>
+    <div class="post-hero-meta">Homelab / August 30, 2026 / 5 min read</div>
+    <h1 class="post-hero-title">Moving the NAS Off My Desktop (And What ZFS Doesn't Tell You)</h1>
+    <p class="post-dek">An old i7-4790K became the real NAS. The drives moved in an afternoon. Everything else took longer.</p>
+  </header>
+
+  <article class="post-body">
+    <h2>An old gaming PC gets a second job</h2>
+    <p>I had an i7-4790K sitting around on an MSI Z97 board, and instead of letting it collect dust I gave it 32GB of DDR3, a spare GTX 1050, and a job: become the always-on box that holds the family's files. The plan was to pull the two IronWolf drives out of my desktop and let this box be the authoritative NAS instead.</p>
+
+    <h2>Exporting the pool the right way</h2>
+    <p>ZFS makes this easier than I expected, as long as you do the boring step first. You export the pool with <code>zpool export ironwolf-mirror</code> before you touch a single cable. Skip that and the new machine can fight with leftover metadata from the old one. I connected the drives to the Intel chipset SATA ports on the Z97 board rather than the ASMedia ones, since I'd read those can be flaky, and then ran <code>zpool import</code> on the new box. The pool came back clean on the first try, which honestly surprised me.</p>
+
+    <h2>The part that actually bit me</h2>
+    <p>Here's the thing nobody tells you: ZFS doesn't care about usernames, it cares about UIDs. My desktop had a user called <code>chance</code> at one UID, and when I created the same username on the new box, Linux handed it a different UID by default. Every file on the pool still belonged to the old number, so from the new machine's point of view, none of it was mine. I had to go back and recreate the accounts with matching UIDs to fix it. Lesson learned the annoying way.</p>
+
+    <h2>Samba doesn't travel with the pool either</h2>
+    <p>Once ownership was sorted, I still couldn't log into the shares from any of the family's devices. Samba passwords live in a separate database, <code>passdb.tdb</code>, that has nothing to do with ZFS and doesn't move with it. Every user needed <code>smbpasswd -a</code> run again on the new box before their login worked. Not hard, just one more thing that isn't obvious until it bites you.</p>
+
+    <div class="post-cta">
+      <p>With the NAS solid and the fleet doing real work, the last step was making it visible to people outside my house.</p>
+      <a class="btn" href="/blog/posts/turning-the-homelab-into-a-portfolio.html">Read how it became a portfolio &rarr;</a>
+    </div>
+  </article>
+</main>
+
+<footer>
+  <a href="/" class="nav-logo" style="opacity:.65">
+    <picture>
+      <source srcset="/img/CIT-white-bg.png" media="(prefers-color-scheme: light)">
+      <img src="/img/CIT-black-bg.png" alt="Chance IT Studio" class="logo-img">
+    </picture>
+  </a>
+  <div class="footer-copy">© 2026 Chance IT Studio LLC — Built in Illinois.</div>
+  <ul class="footer-links">
+    <li><a href="https://github.com/CjCrump" target="_blank">GitHub</a></li>
+    <li><a href="https://www.facebook.com/ChanceITstudio/" target="_blank">Facebook</a></li>
+    <li><a href="/">chanceitstudio.com</a></li>
+  </ul>
+</footer>
+
+</body>
+</html>
